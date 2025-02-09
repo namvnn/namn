@@ -1,0 +1,17 @@
+.image-container {
+  img {
+    animation: appear 1.5s ease;
+  }
+  @keyframes appear {
+    0% {
+      opacity: 0;
+      // transform: scale(0.9);
+      filter: blur(50px);
+    }
+    100% {
+      opacity: 1;
+      // transform: scale(1);
+      filter: blur(0);
+    }
+  }
+}

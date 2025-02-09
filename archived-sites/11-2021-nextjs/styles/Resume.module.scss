@@ -1,0 +1,195 @@
+@import "./utils/flex";
+
+.resume {
+  padding-top: 75px;
+}
+.main-image-container {
+  position: relative;
+}
+.page-title {
+  position: absolute;
+  top: calc(50% - 38px);
+  left: 10%;
+  color: var(--dark-letter);
+}
+
+@mixin displayGrid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  justify-items: flex-start;
+  gap: 1rem;
+  @media screen and (max-width: 800px) {
+    grid-template-columns: 1fr;
+  }
+  button {
+    align-self: flex-end;
+  }
+}
+.title-resume {
+  justify-self: flex-end;
+  transform: translateX(-30px);
+  position: relative;
+  z-index: 500;
+}
+.back-border {
+  position: absolute;
+  right: -20px;
+  bottom: -20px;
+  border: 4px solid var(--dark-letter);
+  width: 100%;
+  height: 100%;
+  border: 4px solid var(--dark-letter);
+  border-radius: 0.5rem;
+  z-index: 10;
+}
+// Work Experience
+.work-experiences {
+  @include displayGrid;
+  color: var(--light-letter);
+  margin: 2rem 0;
+}
+.experience {
+  position: relative;
+  border: 4px solid var(--dark-letter);
+  border-radius: 0.5rem;
+  background: var(--dark-background);
+  margin-bottom: 2rem;
+}
+.exp-detail {
+  position: relative;
+  background: var(--dark-background);
+  z-index: 100;
+  padding: 1rem 0.8rem;
+}
+.exp-title-date {
+  @include flex-center(space-between, center);
+  h1 {
+    margin: 0;
+    font-size: 1.4rem;
+  }
+  span {
+    font-style: italic;
+  }
+}
+.exp-company-location {
+  @include flex-center(space-between, center);
+  margin: 0.4rem 0;
+  h2 {
+    margin: 0;
+    font-size: 1.3rem;
+  }
+  span {
+    font-style: italic;
+  }
+}
+.exp-description {
+  margin-bottom: 0;
+}
+
+// Skills
+.skills {
+  @include displayGrid;
+  color: var(--light-letter);
+  margin: 2rem 0;
+  margin-bottom: 3.8rem;
+}
+.skills-list {
+  border: 4px solid var(--dark-letter);
+  border-radius: 0.5rem;
+  width: 100%;
+  position: relative;
+  background: var(--dark-background);
+}
+.skills-detail {
+  background: var(--dark-background);
+  padding: 1rem 0.8rem;
+  width: 100%;
+  position: relative;
+  z-index: 100;
+}
+.skill {
+  margin-bottom: 0.8rem;
+  h1 {
+    margin: 0;
+    margin-bottom: 0.2rem;
+  }
+  p {
+    margin: 0;
+  }
+}
+.skill:last-child {
+  margin-bottom: 0;
+}
+
+// Education/Volunteer
+.education,
+.volunteer {
+  @include displayGrid;
+  color: var(--light-letter);
+  margin: 2rem 0;
+  margin-bottom: 3.8rem;
+}
+.education-list,
+.volunteer-list {
+  width: 100%;
+}
+.education-detail,
+.volunteer-detail {
+  position: relative;
+  border: 4px solid var(--dark-letter);
+  border-radius: 0.5rem;
+  background: var(--dark-background);
+  margin-bottom: 2rem;
+}
+.education-item, .volunteer-item {
+  position: relative;
+  background: var(--dark-background);
+  z-index: 100;
+  padding: 1rem 0.8rem;
+}
+.education-detail:last-child,
+.volunteer-detail:last-child {
+  margin-bottom: 0;
+}
+.edu-title-date, .vol-title-date {
+  @include flex-center(space-between, center);
+  h1 {
+    margin: 0;
+    font-size: 1.3rem;
+  }
+  span {
+    font-style: italic;
+  }
+}
+.edu-school-location, .vol-company-location {
+  @include flex-center(space-between, center);
+  margin: 0.4rem 0;
+  h2 {
+    margin: 0;
+    font-size: 1.3rem;
+  }
+  span {
+    font-style: italic;
+  }
+}
+.edu-description, .vol-description {
+  margin-bottom: 0;
+}
+
+@media screen and (max-width: 800px) {
+  .page-title {
+    display: none;
+  }
+  .title-resume {
+    justify-self: center;
+    transform: translateX(0) translateY(20px) scale(1.5);
+  }
+  // Work Experience
+  .exp-title-date,
+  .exp-company-location {
+    display: block;
+  }
+  .exp-description {
+    padding-left: 1rem;
+  }
+}

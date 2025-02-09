@@ -1,0 +1,23 @@
+.project-description {
+  padding-top: 110px;
+  min-height: 100vh;
+  position: relative;
+}
+
+.project-description .back-to a {
+  display: flex;
+  align-items: center;
+}
+.project-description .back-to svg {
+  color: #000;
+  font-size: 0.8rem;
+}
+.project-description .back-to span {
+  color: #000;
+  font-size: 0.8rem;
+}
+.project-description .main-image img {
+  box-shadow: 0 15px 40px rgba(85, 108, 214, 0.25);
+  border-radius: 12px;
+  padding: 10px;
+}

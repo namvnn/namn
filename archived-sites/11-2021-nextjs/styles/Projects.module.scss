@@ -1,0 +1,57 @@
+@import "./utils/flex";
+
+.projects {
+  padding-top: 75px;
+}
+.main-image-container {
+  position: relative;
+}
+.page-title {
+  position: absolute;
+  top: calc(50% - 38px);
+  left: 10%;
+  color: var(--dark-letter);
+}
+.search-bar {
+  margin: 1.5rem 0;
+  @include flex-center(center, center);
+  input {
+    background: none;
+    outline: none;
+    border: 2px solid var(--dark-letter);
+    width: 300px;
+    height: 50px;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    color: var(--dark-letter);
+    font-size: 0.8rem;
+    transition: box-shadow 0.5s ease;
+    &:hover,
+    &:focus,
+    &:active {
+      box-shadow: 1px 1px 10px 1px var(--dark-letter);
+    }
+  }
+}
+.project-grid {
+  display: grid;
+  grid-gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  justify-items: center;
+  align-items: center;
+  margin: 3rem 0;
+}
+.loader-placeholder {
+  height: 400px;
+}
+.not-found {
+  font-size: 1.5rem;
+  height: 400px;
+  color: var(--dark-letter);
+}
+
+@media screen and (max-width: 800px) {
+  .page-title {
+    display: none;
+  }
+}

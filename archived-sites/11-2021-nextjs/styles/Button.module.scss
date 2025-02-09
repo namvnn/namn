@@ -1,0 +1,39 @@
+.button {
+  outline: none;
+  background: var(--dark-letter);
+  color: var(--background);
+  border-radius: 1rem;
+  border: 4px solid var(--background);
+  padding: 0.5rem 1rem;
+  font-weight: bold;
+  font-size: 1.2rem;
+  cursor: pointer;
+
+  box-shadow: 1px 1px 0px 1px rgba(0, 0, 0, 0.05);
+  -webkit-transition-property: background, color, border, transform;
+  transition-property: background, color, border, transform;
+  -webkit-transition-duration: 50ms;
+  transition-duration: 50ms;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+
+  &:focus,
+  &:hover {
+    outline: none;
+    box-shadow: 1px 4px 5px 1px rgba(0, 0, 0, 0.1);
+    background: var(--background);
+    color: var(--dark-letter);
+    border: 4px solid var(--dark-letter);
+  }
+  &:active {
+    transform: scale(0.8);
+    -webkit-transition-duration: 10ms;
+    transition-duration: 10ms;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .button {
+    font-size: 1rem;
+  }
+}
