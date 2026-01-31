@@ -1,29 +1,28 @@
 #!/usr/bin/env bash
 
 if [[ -n "$(git status -s)" ]]; then
-  echo -e "\n==> Commit changes in main branch before deploying."
+  echo -e "\n==> Commit changes in 'main' branch before deploying"
 else
-  echo -e "\n==> Switch to branch 'gh-pages'"
-  git checkout gh-pages
+  echo -e "\n==> Switch to 'deploy' branch"
+  git checkout deploy
 
   echo -e "\n==> Prepare files"
   rsync -rPavh --delete --exclude .git --exclude tmp tmp/ ./
   rm -rf tmp/
 
   if [[ -z "$(git status -s)" ]]; then
-    echo -e "\n==> Nothing to deploy to GitHub page"
+    echo -e "\n==> Nothing to deploy"
   else
     echo -e "\n==> Commit changes"
     git status -s
     git add .
-    git commit -m "Deploy to GitHub page"
-
-    echo -e "\n==> Trigger deployment"
+    git commit -m "Update 'deploy' branch"
+    echo -e "\n==> Push changes to 'deploy' remote branch"
     git push
 
-    echo -e "\n==> Check out deployment at https://github.com/namvnn/namvnn.github.io/deployments"
+    pnpx wrangler pages deploy . --project-name 'namnme'
   fi
 
-  echo -e "\n==> Switch to branch 'main'"
+  echo -e "\n==> Switch to 'main' branch"
   git checkout main
 fi
