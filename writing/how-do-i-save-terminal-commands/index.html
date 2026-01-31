@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- block-start: head-common -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="author" content="Nam Nguyen" />
+  <meta name="color-scheme" content="light dark" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Nam Nguyen" />
+  <link rel="stylesheet" href="/styles/common.css" />
+  <link rel="icon" href="/images/favicon-light.svg" type="image/svg+xml" media="(prefers-color-scheme:no-preference)" />
+  <link rel="icon" href="/images/favicon-dark.svg" type="image/svg+xml" media="(prefers-color-scheme:dark)" />
+  <link rel="icon" href="/images/favicon-light.svg" type="image/svg+xml" media="(prefers-color-scheme:light)" />
+  <!-- block-end: head-common -->
+
+  <!-- block-start: style-writing -->
+  <link rel="stylesheet" href="/styles/writing.css" />
+  <link rel="stylesheet" href="/styles/code.css" />
+  <!-- block-end: style-writing -->
+
+  <title>How Do I Save Terminal Commands? | Nam Nguyen</title>
+  <meta property="og:title" content="How Do I Save Terminal Commands? | Nam Nguyen" />
+  <meta name="description" content="Build a command manager in Bash to save terminal commands." />
+  <meta property="og:description" content="Build a command manager in Bash to save terminal commands." />
+  <meta property="og:image" content="https://namn.me/images/writing-how-do-i-save-terminal-commands-og.png">
+  <meta property="og:url" content="https://namn.me/writing/how-do-i-save-terminal-commands" />
+  <link rel="canonical" href="https://namn.me/writing/how-do-i-save-terminal-commands" />
+</head>
+
+<body>
+  <!-- block-start: header -->
+  <header>
+    <span id="back-to-top" class="[ visually-hidden top-0 ]" aria-hidden="true"></span>
+    <nav class="[ navbar ] [ flow-x ]">
+      <a href="/" data-line="none" class="[ navbar__link ]">
+        <svg class="[ navbar__logo ] [ self-drawing ]" width="28" height="26" viewBox="0 0 28 26" fill="none"
+          aria-label="logo" role="img" xmlns="http://www.w3.org/2000/svg">
+          <path pathLength="1"
+            d="M5.04113 25.256C3.78246 25.256 2.77979 24.808 2.03313 23.912C1.30779 22.9947 0.945125 21.9493 0.945125 20.776C0.945125 19.6027 1.33979 18.5573 2.12913 17.64C2.93979 16.7013 3.89979 16.232 5.00913 16.232C5.47846 16.232 5.86246 16.3493 6.16113 16.584C6.48113 16.7973 6.64113 17.1173 6.64113 17.544C6.64113 18.3333 6.12913 18.728 5.10513 18.728C4.63579 18.728 4.23046 18.9307 3.88913 19.336C3.54779 19.72 3.37713 20.2107 3.37713 20.808C3.37713 21.384 3.53713 21.864 3.85713 22.248C4.17713 22.6107 4.62513 22.792 5.20113 22.792C7.18513 22.792 8.17712 19.72 8.17712 13.576C8.17712 11.8907 8.00646 9.68267 7.66513 6.952C7.32379 4.22133 7.15313 2.632 7.15313 2.184C7.15313 1.71467 7.30246 1.34133 7.60113 1.064C7.89979 0.786666 8.25179 0.647999 8.65713 0.647999C9.25446 0.647999 9.73446 1.02133 10.0971 1.768C11.2491 4.008 12.8918 7.00533 15.0251 10.76C17.1585 14.5147 19.0038 17.6293 20.5611 20.104C20.4758 20.104 20.3691 18.6213 20.2411 15.656C20.1345 12.6693 20.0811 10.7067 20.0811 9.768C20.0811 7.4 20.3158 5.384 20.7851 3.72C21.0625 2.76 21.5105 2.01333 22.1291 1.48C22.7691 0.925332 23.4945 0.647999 24.3051 0.647999C25.1371 0.647999 25.8411 0.871999 26.4171 1.32C26.9931 1.74667 27.2811 2.248 27.2811 2.824C27.2811 3.4 27.0358 3.688 26.5451 3.688C26.3958 3.688 26.0865 3.592 25.6171 3.4C25.1478 3.208 24.7318 3.112 24.3691 3.112C23.0251 3.112 22.3531 6.19467 22.3531 12.36C22.3531 13.8107 22.4705 16.0293 22.7051 19.016C22.9398 22.0027 23.0571 23.6667 23.0571 24.008C23.0571 24.3493 22.9078 24.6587 22.6091 24.936C22.3318 25.2133 22.0011 25.352 21.6171 25.352C21.0411 25.352 20.5398 24.9787 20.1131 24.232C19.0465 22.3333 17.8305 20.2107 16.4651 17.864L12.4011 10.6C11.2278 8.424 10.4171 6.99467 9.96913 6.312C10.2678 9.128 10.4171 11.8053 10.4171 14.344C10.4171 21.6187 8.62513 25.256 5.04113 25.256Z" />
+        </svg>
+      </a>
+      <a href="/" class="[ navbar__link ]">Home</a>
+      <a href="/projects" class="[ navbar__link ]">Projects</a>
+      <a href="/writing" class="[ navbar__link ]">Writing</a>
+      <a href="https://github.com/namvnn" class="[ navbar__link ]" target="_blank">Code</a>
+    </nav>
+  </header>
+  <!-- block-end: header -->
+
+  <main class="[ writing ]">
+    <h1 class="[ title ]">How Do I Save Terminal Commands?</h1>
+    <p class="[ -mt-4 color-mono-06 ]">Published on April 30, 2025. Last updated on December 28, 2025.</p>
+
+    <ul id="toc" class="[ toc ]">
+      <li><a href="#motivation" id="toc-motivation">Motivation</a></li>
+      <li><a href="#build-a-simple-command-manager" id="toc-build-a-simple-command-manager">Build a simple command manager</a>
+        <ul>
+          <li><a href="#prerequisites" id="toc-prerequisites">Prerequisites</a></li>
+          <li><a href="#features" id="toc-features">Features</a></li>
+          <li><a href="#project-structure" id="toc-project-structure">Project structure</a></li>
+          <li><a href="#command-files" id="toc-command-files">Command files</a></li>
+          <li><a href="#find-command-with-fzf" id="toc-find-command-with-fzf">Find command with <code>fzf</code></a></li>
+          <li><a href="#detect-placeholders-and-fill-in-values" id="toc-detect-placeholders-and-fill-in-values">Detect placeholders and fill in values</a></li>
+          <li><a href="#perform-action-on-command" id="toc-perform-action-on-command">Perform action on command</a></li>
+          <li><a href="#full-implementation" id="toc-full-implementation">Full implementation</a></li>
+        </ul>
+      </li>
+      <li><a href="#final-words" id="toc-final-words">Final words</a></li>
+    </ul>
+
+    <article>
+      <h2 id="motivation">
+        <a href="#motivation">Motivation</a>
+      </h2>
+      <p>I often find myself in a situation where I want to remember a useful terminal
+      command, but I have a poor memory and will forget it after a few days. I used
+      to save all useful commands in <a href="https://obsidian.md" target="_blank">Obsidian</a>, which I use
+      daily as my second brain for notes, planning, learning, and more.</p>
+      <p>However, whenever I need to use a command I previously bumped into and saved in
+      the note, it is a bit tedious to jump out of the terminal, open Obsidian, search
+      for the note and find the right command. On top of that, I sometimes include
+      placeholders for command arguments which are dynamic case by case, so whenever
+      I need to use such a command with placeholders, I have to copy it from the note,
+      paste it into the terminal, and then manually fill in the appropriate values.</p>
+      <p>Therefore, I want to build a command manager that I can use directly within the
+      terminal. It can detect placeholders in a saved command and prompt me to fill
+      values in. It should be built with my existing daily tools namely built-in
+      commands on macOS/Linux and <a href="https://github.com/junegunn/fzf" target="_blank">fzf</a>.</p>
+      <!-- block-start: back-to-top -->
+      <p class="[ color-mono-07 ]"><a href="#back-to-top">&#8593; Back to top</a></p>
+      <!-- block-end: back-to-top -->
+
+      <h2 id="build-a-simple-command-manager">
+        <a href="#build-a-simple-command-manager">Build a simple command manager</a>
+      </h2>
+      <p>Before we start, if you are not yet familiar with Bash, I highly recommend
+      checking out <a href="https://learnxinyminutes.com/bash" target="_blank">Learn Bash in Y minutes</a> or
+      <a href="https://devhints.io/bash" target="_blank">Bash scripting cheatsheet</a> for a brief introduction.</p>
+      <p>The command manager is named <code>cmd</code>. A note that <code>cmd</code> supports macOS and Linux
+      only.</p>
+      <!-- block-start: back-to-top -->
+      <p class="[ color-mono-07 ]"><a href="#back-to-top">&#8593; Back to top</a></p>
+      <!-- block-end: back-to-top -->
+
+      <h3 id="prerequisites">
+        <a href="#prerequisites">Prerequisites</a>
+      </h3>
+      <ul>
+        <li><code>bash</code></li>
+        <li><a href="https://github.com/junegunn/fzf" target="_blank">fzf</a></li>
+        <li>Built-in commands such as <code>sed</code>, <code>grep</code>, <code>cat</code>, <code>find</code>, <code>tr</code>, <code>uname</code> and
+          <code>pbcopy</code> on macOS or <code>xclip</code> on Linux.</li>
+      </ul>
+      <!-- block-start: back-to-top -->
+      <p class="[ color-mono-07 ]"><a href="#back-to-top">&#8593; Back to top</a></p>
+      <!-- block-end: back-to-top -->
+
+      <h3 id="features">
+        <a href="#features">Features</a>
+      </h3>
+      <p>Before we jump into building the command, it is helpful to define the list of
+      features first:</p>
+      <ul>
+        <li>Save commands in <code>cmd-*.txt</code> categories files, where <code>*</code> is a category, e.g.
+          <code>cmd-git.txt</code> where <code>git</code> is a category.</li>
+        <li>Accept either zero or one argument; if provided, the argument should be a
+          category.</li>
+        <li>If no argument is given, list all saved commands across all category files.</li>
+        <li>If a category as an argument is given, list only saved commands in the
+          corresponding category file.</li>
+        <li>Allow to select only one command at a time.</li>
+        <li>If the selected command has placeholders, prompt to fill them with input
+          values.</li>
+        <li>After a command is selected and placeholders are filled, there are three
+          actions: copy, execute and quit. If neither action is selected, continue
+          prompting until one action is chosen.</li>
+      </ul>
+      <!-- block-start: back-to-top -->
+      <p class="[ color-mono-07 ]"><a href="#back-to-top">&#8593; Back to top</a></p>
+      <!-- block-end: back-to-top -->
+
+      <h3 id="project-structure">
+        <a href="#project-structure">Project structure</a>
+      </h3>
+<div class="[ codeblock ] [ tab ]">
+<label class="[ tab__name ]">files</label>
+<pre class="[ tab__panel ]"><code>.
+├── cmd
+├── cmd-find.txt
+└── cmd-git.txt</code></pre>
+</div>
+      <ul>
+        <li><code>cmd</code> is the command manager written in <code>bash</code>.</li>
+        <li><code>cmd-*.txt</code> (e.g. <code>cmd-find.txt</code> and <code>cmd-git.txt</code>) files consist of saved
+        commands along with brief descriptions, where <code>*</code> is a category. The content
+        of these files will be explained in detail below.</li>
+      </ul>
+      <p>Remember to run the below command to make <code>cmd</code> executable:</p>
+<div class="[ codeblock ] [ tab ]">
+<label class="[ tab__name ]">shell</label>
+<pre class="[ tab__panel ]"><code><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="[ fu ]">chmod</span> +x ./cmd</span></code></pre>
+</div>
+      <!-- block-start: back-to-top -->
+      <p class="[ color-mono-07 ]"><a href="#back-to-top">&#8593; Back to top</a></p>
+      <!-- block-end: back-to-top -->
+
+      <h3 id="command-files">
+        <a href="#command-files">Command files</a>
+      </h3>
+      <p>In a command file, each line is one command entry. The format is</p>
+<div class="[ codeblock ] [ tab ]">
+<label class="[ tab__name ]">format</label>
+<pre class="[ tab__panel ]"><code>description: command</code></pre>
+</div>
+      <ul>
+        <li><code>description</code> should be short and sweet.</li>
+        <li><code>command</code> is a command which will be copied or executed. It may optionally
+          contain <code>&lt;placeholder&gt;</code>s.</li>
+      </ul>
+      <p>The content of the <code>cmd-git.txt</code> file looks like this:</p>
+<div class="[ codeblock ] [ tab ]">
+<label class="[ tab__name ]">cmd-git.txt</label>
+<pre class="[ tab__panel ]"><code>git log oneline in graph: git log --oneline --graph
+git rename current branch: git branch -m &lt;new-name&gt;
+git go back n commit(s) from HEAD: git reset --&lt;mode&gt; HEAD~&lt;n&gt;</code></pre>
+</div>
+      <p>Let's break down the <code>cmd-git.txt</code> file above:</p>
+      <ul>
+        <li>The first entry: <code>git log oneline in graph: git log --oneline --graph</code>
+          <ul>
+            <li><code>git log oneline in graph</code> is a description.</li>
+            <li><code>git log --oneline --graph</code> is a command with no placeholders.</li>
+          </ul>
+        </li>
+        <li>The second entry: <code>git rename current branch: git branch -m &lt;new-name&gt;</code>
+          <ul>
+            <li><code>git rename current branch</code> is a description.</li>
+            <li><code>git branch -m &lt;new-name&gt;</code> is a command with a <code>&lt;new-name&gt;</code> placeholder.</li>
+          </ul>
+        </li>
+        <li>The third entry: <code>git go back n commit(s) from HEAD: git reset --&lt;mode&gt; HEAD~&lt;n&gt;</code>
+          <ul>
+            <li><code>git go back n commit(s) from HEAD</code> is a description.</li>
+            <li><code>git reset --&lt;mode&gt; HEAD~&lt;n&gt;</code> is a command with two placeholders, <code>&lt;mode&gt;</code>
+              and <code>&lt;n&gt;</code>.</li>
+          </ul>
+        </li>
+      </ul>
+      <p>Then, let's add one command entry to the <code>cmd-find.txt</code> file:</p>
+<div class="[ codeblock ] [ tab ]">
+<label class="[ tab__name ]">cmd-find.txt</label>
+<pre class="[ tab__panel ]"><code>find and delete empty directories: find &lt;target-path&gt; -type d -empty -delete</code></pre>
+</div>
+      <p>Now, let's build the command manager in Bash in the below sections. I will use
+      in-line comments to explain what each line is.</p>
+      <p>I have a tip. If you do not understand what a command is and what their flags or
+      options are, you can run the <code>man</code> command with a command name to read its
+      manual. For example, if I want to read <code>grep</code> manual, I can run the below
+      command:</p>
+<div class="[ codeblock ] [ tab ]">
+<label class="[ tab__name ]">shell</label>
+<pre class="[ tab__panel ]"><code><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="[ fu ]">man</span> grep</span></code></pre>
+</div>
+      <!-- block-start: back-to-top -->
+      <p class="[ color-mono-07 ]"><a href="#back-to-top">&#8593; Back to top</a></p>
+      <!-- block-end: back-to-top -->
+
+      <h3 id="find-command-with-fzf">
+        <a href="#find-command-with-fzf">Find command with <code>fzf</code></a>
+      </h3>
+<div class="[ codeblock ] [ tab ]">
+<label class="[ tab__name ]">cmd</label>
+<pre class="[ tab__panel ]"><code><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="[ co ]">#!/usr/bin/env bash</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="[ co ]"># The optional category passed as an argument</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="[ va ]">category</span><span class="[ op ]">=</span><span class="[ st ]">&quot;</span><span class="[ va ]">$1</span><span class="[ st ]">&quot;</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="[ co ]"># The directory of all command files</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="[ va ]">cmd_dir</span><span class="[ op ]">=</span><span class="[ st ]">&quot;.&quot;</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="[ co ]"># The path to the command file based on the category</span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a><span class="[ va ]">cmd_file</span><span class="[ op ]">=</span><span class="[ st ]">&quot;</span><span class="[ va ]">$cmd_dir</span><span class="[ st ]">/cmd-</span><span class="[ va ]">$category</span><span class="[ st ]">.txt&quot;</span></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a><span class="[ co ]"># The selected command based on the category</span></span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a><span class="[ va ]">cmd</span><span class="[ op ]">=</span><span class="[ st ]">&quot;&quot;</span></span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a><span class="[ co ]"># === Find command with fzf ===</span></span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a><span class="[ co ]"># If no argument is provided, i.e. no category</span></span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a><span class="[ cf ]">if</span> <span class="[ kw ]">[[</span> <span class="[ va ]">$#</span> <span class="[ ot ]">-eq</span> 0 <span class="[ kw ]">]];</span> <span class="[ cf ]">then</span></span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>  <span class="[ co ]"># Get commands in all command files whose filename </span></span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a>  <span class="[ co ]"># pattern is &quot;cmd-*.txt&quot; in the &quot;cmd_dir&quot; directory</span></span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a>  <span class="[ va ]">cmds</span><span class="[ op ]">=</span><span class="[ va ]">$(</span><span class="[ fu ]">find</span> <span class="[ st ]">&quot;</span><span class="[ va ]">$cmd_dir</span><span class="[ st ]">&quot;</span> <span class="[ at ]">-maxdepth</span> 1 <span class="[ at ]">-name</span> <span class="[ st ]">&quot;cmd-*.txt&quot;</span> <span class="[ at ]">-exec</span> cat {} <span class="[ st ]">&#39;+&#39;</span><span class="[ va ]">)</span></span>
+<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a>  <span class="[ co ]"># Find a command entry across all found command files</span></span>
+<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a>  <span class="[ va ]">cmd</span><span class="[ op ]">=</span><span class="[ va ]">$(</span><span class="[ bu ]">echo</span> <span class="[ st ]">&quot;</span><span class="[ va ]">$cmds</span><span class="[ st ]">&quot;</span> <span class="[ kw ]">|</span> <span class="[ ex ]">fzf</span><span class="[ va ]">)</span></span>
+<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a><span class="[ co ]"># If the command file exists based on the category</span></span>
+<span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a><span class="[ cf ]">elif</span> <span class="[ kw ]">[[</span> <span class="[ ot ]">-e</span> <span class="[ st ]">&quot;</span><span class="[ va ]">$cmd_file</span><span class="[ st ]">&quot;</span> <span class="[ kw ]">]];</span> <span class="[ cf ]">then</span></span>
+<span id="cb7-27"><a href="#cb7-27" aria-hidden="true" tabindex="-1"></a>  <span class="[ co ]"># Find a command entry within the command file</span></span>
+<span id="cb7-28"><a href="#cb7-28" aria-hidden="true" tabindex="-1"></a>  <span class="[ va ]">cmd</span><span class="[ op ]">=</span><span class="[ va ]">$(</span><span class="[ ex ]">fzf</span> <span class="[ op ]">&lt;</span> <span class="[ st ]">&quot;</span><span class="[ va ]">$cmd_file</span><span class="[ st ]">&quot;</span><span class="[ va ]">)</span></span>
+<span id="cb7-29"><a href="#cb7-29" aria-hidden="true" tabindex="-1"></a><span class="[ co ]"># If the command file is not found based on the category</span></span>
+<span id="cb7-30"><a href="#cb7-30" aria-hidden="true" tabindex="-1"></a><span class="[ cf ]">else</span></span>
+<span id="cb7-31"><a href="#cb7-31" aria-hidden="true" tabindex="-1"></a>  <span class="[ co ]"># Print the not found error message</span></span>
+<span id="cb7-32"><a href="#cb7-32" aria-hidden="true" tabindex="-1"></a>  <span class="[ bu ]">echo</span> <span class="[ st ]">&quot;</span><span class="[ va ]">$cmd_file</span><span class="[ st ]">: No such file&quot;</span></span>
+<span id="cb7-33"><a href="#cb7-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-34"><a href="#cb7-34" aria-hidden="true" tabindex="-1"></a>  <span class="[ co ]"># Exit with the error code</span></span>
+<span id="cb7-35"><a href="#cb7-35" aria-hidden="true" tabindex="-1"></a>  <span class="[ bu ]">exit</span> 1</span>
+<span id="cb7-36"><a href="#cb7-36" aria-hidden="true" tabindex="-1"></a><span class="[ cf ]">fi</span></span>
+<span id="cb7-37"><a href="#cb7-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-38"><a href="#cb7-38" aria-hidden="true" tabindex="-1"></a><span class="[ co ]"># If the &quot;cmd&quot; variable is empty,</span></span>
+<span id="cb7-39"><a href="#cb7-39" aria-hidden="true" tabindex="-1"></a><span class="[ co ]"># i.e. no command entry is selected</span></span>
+<span id="cb7-40"><a href="#cb7-40" aria-hidden="true" tabindex="-1"></a><span class="[ cf ]">if</span> <span class="[ kw ]">[[</span> <span class="[ ot ]">-z</span> <span class="[ st ]">&quot;</span><span class="[ va ]">$cmd</span><span class="[ st ]">&quot;</span> <span class="[ kw ]">]];</span> <span class="[ cf ]">then</span></span>
+<span id="cb7-41"><a href="#cb7-41" aria-hidden="true" tabindex="-1"></a>  <span class="[ co ]"># Exit with the success code</span></span>
+<span id="cb7-42"><a href="#cb7-42" aria-hidden="true" tabindex="-1"></a>  <span class="[ bu ]">exit</span> 0</span>
+<span id="cb7-43"><a href="#cb7-43" aria-hidden="true" tabindex="-1"></a><span class="[ cf ]">fi</span></span>
+<span id="cb7-44"><a href="#cb7-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-45"><a href="#cb7-45" aria-hidden="true" tabindex="-1"></a><span class="[ co ]"># Remove the &quot;description: &quot; prefix to get</span></span>
+<span id="cb7-46"><a href="#cb7-46" aria-hidden="true" tabindex="-1"></a><span class="[ co ]"># the command from the selected command entry</span></span>
+<span id="cb7-47"><a href="#cb7-47" aria-hidden="true" tabindex="-1"></a><span class="[ va ]">cmd</span><span class="[ op ]">=</span><span class="[ va ]">${cmd</span><span class="[ op ]">#</span><span class="[ pp ]">*</span>: <span class="[ va ]">}</span></span>
+<span id="cb7-48"><a href="#cb7-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-49"><a href="#cb7-49" aria-hidden="true" tabindex="-1"></a><span class="[ co ]"># Trim leading spaces</span></span>
+<span id="cb7-50"><a href="#cb7-50" aria-hidden="true" tabindex="-1"></a><span class="[ va ]">cmd</span><span class="[ op ]">=</span><span class="[ va ]">${cmd</span><span class="[ op ]">/#</span><span class="[ ss ]">[[:space:]]</span><span class="[ op ]">/</span><span class="[ va ]">}</span></span>
+<span id="cb7-51"><a href="#cb7-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-52"><a href="#cb7-52" aria-hidden="true" tabindex="-1"></a><span class="[ co ]"># Trim trailing spaces</span></span>
+<span id="cb7-53"><a href="#cb7-53" aria-hidden="true" tabindex="-1"></a><span class="[ va ]">cmd</span><span class="[ op ]">=</span><span class="[ va ]">${cmd</span><span class="[ op ]">/%</span><span class="[ ss ]">[[:space:]]</span><span class="[ op ]">/</span><span class="[ va ]">}</span></span>
+<span id="cb7-54"><a href="#cb7-54" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-55"><a href="#cb7-55" aria-hidden="true" tabindex="-1"></a><span class="[ co ]"># Print the selected command</span></span>
+<span id="cb7-56"><a href="#cb7-56" aria-hidden="true" tabindex="-1"></a><span class="[ bu ]">echo</span> <span class="[ st ]">&quot;Selected command: </span><span class="[ va ]">$cmd</span><span class="[ st ]">&quot;</span></span></code></pre>
+</div>
+      <!-- block-start: back-to-top -->
+      <p class="[ color-mono-07 ]"><a href="#back-to-top">&#8593; Back to top</a></p>
+      <!-- block-end: back-to-top -->
+
+      <h3 id="detect-placeholders-and-fill-in-values">
+        <a href="#detect-placeholders-and-fill-in-values">Detect placeholders and fill in values</a>
+      </h3>
+<div class="[ codeblock ] [ tab ]">
+<label class="[ tab__name ]">cmd</label>
+<pre class="[ tab__panel ]"><code><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="[ co ]">#!/usr/bin/env bash</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="[ ex ]">...</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="[ co ]"># The selected command based on the category</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="[ va ]">cmd</span><span class="[ op ]">=</span><span class="[ st ]">&quot;&quot;</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="[ co ]"># === Find command with fzf ===</span></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="[ ex ]">...</span></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a><span class="[ co ]"># === Detect placeholders and fill in values ===</span></span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a><span class="[ co ]"># Get all unique placeholders in the selected command</span></span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a><span class="[ va ]">placeholders</span><span class="[ op ]">=</span><span class="[ va ]">$(</span><span class="[ bu ]">echo</span> <span class="[ st ]">&quot;</span><span class="[ va ]">$cmd</span><span class="[ st ]">&quot;</span> <span class="[ kw ]">|</span> <span class="[ fu ]">grep</span> <span class="[ at ]">-oE</span> <span class="[ st ]">&quot;&lt;(\w|-)+&gt;&quot;</span> <span class="[ kw ]">|</span> <span class="[ fu ]">sort</span> <span class="[ at ]">-u</span><span class="[ va ]">)</span></span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a><span class="[ co ]"># If the &quot;placeholders&quot; variable is not empty,</span></span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a><span class="[ co ]"># i.e. there is at least one placeholder</span></span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a><span class="[ cf ]">if</span> <span class="[ kw ]">[[</span> <span class="[ ot ]">-n</span> <span class="[ st ]">&quot;</span><span class="[ va ]">$placeholders</span><span class="[ st ]">&quot;</span> <span class="[ kw ]">]];</span> <span class="[ cf ]">then</span></span>
+<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a>  <span class="[ bu ]">echo</span> <span class="[ st ]">&quot;----------------------&quot;</span></span>
+<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-21"><a href="#cb8-21" aria-hidden="true" tabindex="-1"></a>  <span class="[ co ]"># Loop through each placeholder</span></span>
+<span id="cb8-22"><a href="#cb8-22" aria-hidden="true" tabindex="-1"></a>  <span class="[ cf ]">for</span> k <span class="[ kw ]">in</span> <span class="[ va ]">$placeholders</span><span class="[ kw ]">;</span> <span class="[ cf ]">do</span></span>
+<span id="cb8-23"><a href="#cb8-23" aria-hidden="true" tabindex="-1"></a>    <span class="[ co ]"># Prompt to input a value for the placeholder</span></span>
+<span id="cb8-24"><a href="#cb8-24" aria-hidden="true" tabindex="-1"></a>    <span class="[ bu ]">read</span> <span class="[ at ]">-r</span> <span class="[ at ]">-p</span> <span class="[ st ]">&quot;</span><span class="[ va ]">$k</span><span class="[ st ]">: &quot;</span> <span class="[ va ]">v</span></span>
+<span id="cb8-25"><a href="#cb8-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-26"><a href="#cb8-26" aria-hidden="true" tabindex="-1"></a>    <span class="[ co ]"># Replace the placeholder in the selected command</span></span>
+<span id="cb8-27"><a href="#cb8-27" aria-hidden="true" tabindex="-1"></a>    <span class="[ co ]"># with the input value</span></span>
+<span id="cb8-28"><a href="#cb8-28" aria-hidden="true" tabindex="-1"></a>    <span class="[ va ]">cmd</span><span class="[ op ]">=</span><span class="[ va ]">${cmd</span><span class="[ op ]">//</span><span class="[ va ]">$k</span><span class="[ op ]">/</span><span class="[ va ]">$v}</span></span>
+<span id="cb8-29"><a href="#cb8-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-30"><a href="#cb8-30" aria-hidden="true" tabindex="-1"></a>    <span class="[ co ]"># Print the updated command after the replacement</span></span>
+<span id="cb8-31"><a href="#cb8-31" aria-hidden="true" tabindex="-1"></a>    <span class="[ bu ]">echo</span> <span class="[ st ]">&quot;Command: </span><span class="[ va ]">$cmd</span><span class="[ st ]">&quot;</span></span>
+<span id="cb8-32"><a href="#cb8-32" aria-hidden="true" tabindex="-1"></a>  <span class="[ cf ]">done</span></span>
+<span id="cb8-33"><a href="#cb8-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-34"><a href="#cb8-34" aria-hidden="true" tabindex="-1"></a>  <span class="[ bu ]">echo</span> <span class="[ st ]">&quot;----------------------&quot;</span></span>
+<span id="cb8-35"><a href="#cb8-35" aria-hidden="true" tabindex="-1"></a><span class="[ cf ]">fi</span></span></code></pre>
+</div>
+      <!-- block-start: back-to-top -->
+      <p class="[ color-mono-07 ]"><a href="#back-to-top">&#8593; Back to top</a></p>
+      <!-- block-end: back-to-top -->
+
+      <h3 id="perform-action-on-command">
+        <a href="#perform-action-on-command">Perform action on command</a>
+      </h3>
+<div class="[ codeblock ] [ tab ]">
+<label class="[ tab__name ]">cmd</label>
+<pre class="[ tab__panel ]"><code><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="[ co ]">#!/usr/bin/env bash</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="[ ex ]">...</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="[ co ]"># The selected command based on the category</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="[ va ]">cmd</span><span class="[ op ]">=</span><span class="[ st ]">&quot;&quot;</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a><span class="[ co ]"># === Find command with fzf ===</span></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a><span class="[ ex ]">...</span></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a><span class="[ co ]"># === Detect placeholders and fill in values ===</span></span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a><span class="[ ex ]">...</span></span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a><span class="[ co ]"># === Perform action on command ===</span></span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a><span class="[ co ]"># Keep prompting until a valid action is chosen</span></span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a><span class="[ cf ]">while</span> <span class="[ fu ]">true</span><span class="[ kw ]">;</span> <span class="[ cf ]">do</span></span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a>  <span class="[ co ]"># Prompt to input a value for the action</span></span>
+<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a>  <span class="[ bu ]">read</span> <span class="[ at ]">-r</span> <span class="[ at ]">-p</span> <span class="[ st ]">&quot;copy (c), execute (e) or quit (q)? &quot;</span> <span class="[ va ]">action</span></span>
+<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a>  <span class="[ co ]"># Transform the input value to lowercase</span></span>
+<span id="cb9-22"><a href="#cb9-22" aria-hidden="true" tabindex="-1"></a>  <span class="[ co ]"># for easier matching</span></span>
+<span id="cb9-23"><a href="#cb9-23" aria-hidden="true" tabindex="-1"></a>  <span class="[ va ]">action</span><span class="[ op ]">=</span><span class="[ va ]">$(</span><span class="[ bu ]">echo</span> <span class="[ st ]">&quot;</span><span class="[ va ]">$action</span><span class="[ st ]">&quot;</span> <span class="[ kw ]">|</span> <span class="[ fu ]">tr</span> <span class="[ st ]">&quot;[:upper:]&quot;</span> <span class="[ st ]">&quot;[:lower:]&quot;</span><span class="[ va ]">)</span></span>
+<span id="cb9-24"><a href="#cb9-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-25"><a href="#cb9-25" aria-hidden="true" tabindex="-1"></a>  <span class="[ co ]"># If the selected action is to copy</span></span>
+<span id="cb9-26"><a href="#cb9-26" aria-hidden="true" tabindex="-1"></a>  <span class="[ cf ]">if</span> <span class="[ kw ]">[[</span> <span class="[ st ]">&quot;</span><span class="[ va ]">$action</span><span class="[ st ]">&quot;</span> <span class="[ ot ]">==</span> c<span class="[ pp ]">*</span> <span class="[ kw ]">]];</span> <span class="[ cf ]">then</span></span>
+<span id="cb9-27"><a href="#cb9-27" aria-hidden="true" tabindex="-1"></a>    <span class="[ co ]"># Get the operating system</span></span>
+<span id="cb9-28"><a href="#cb9-28" aria-hidden="true" tabindex="-1"></a>    <span class="[ va ]">os</span><span class="[ op ]">=</span><span class="[ va ]">$(</span><span class="[ fu ]">uname</span> <span class="[ at ]">-s</span><span class="[ va ]">)</span></span>
+<span id="cb9-29"><a href="#cb9-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-30"><a href="#cb9-30" aria-hidden="true" tabindex="-1"></a>    <span class="[ cf ]">case</span> <span class="[ st ]">&quot;</span><span class="[ va ]">$os</span><span class="[ st ]">&quot;</span> <span class="[ kw ]">in</span></span>
+<span id="cb9-31"><a href="#cb9-31" aria-hidden="true" tabindex="-1"></a>      <span class="[ co ]"># If OS is macOS</span></span>
+<span id="cb9-32"><a href="#cb9-32" aria-hidden="true" tabindex="-1"></a>      <span class="[ ss ]">Darwin</span><span class="[ pp ]">*</span><span class="[ kw ]">)</span></span>
+<span id="cb9-33"><a href="#cb9-33" aria-hidden="true" tabindex="-1"></a>        <span class="[ co ]"># Copy the selected command to clipboard</span></span>
+<span id="cb9-34"><a href="#cb9-34" aria-hidden="true" tabindex="-1"></a>        <span class="[ bu ]">echo</span> <span class="[ at ]">-n</span> <span class="[ st ]">&quot;</span><span class="[ va ]">$cmd</span><span class="[ st ]">&quot;</span> <span class="[ kw ]">|</span> <span class="[ ex ]">pbcopy</span></span>
+<span id="cb9-35"><a href="#cb9-35" aria-hidden="true" tabindex="-1"></a>        <span class="[ cf ]">;;</span></span>
+<span id="cb9-36"><a href="#cb9-36" aria-hidden="true" tabindex="-1"></a>      <span class="[ co ]"># If OS is Linux</span></span>
+<span id="cb9-37"><a href="#cb9-37" aria-hidden="true" tabindex="-1"></a>      <span class="[ ss ]">Linux</span><span class="[ pp ]">*</span><span class="[ kw ]">)</span></span>
+<span id="cb9-38"><a href="#cb9-38" aria-hidden="true" tabindex="-1"></a>        <span class="[ co ]"># Copy the selected command to clipboard</span></span>
+<span id="cb9-39"><a href="#cb9-39" aria-hidden="true" tabindex="-1"></a>        <span class="[ bu ]">echo</span> <span class="[ at ]">-n</span> <span class="[ st ]">&quot;</span><span class="[ va ]">$cmd</span><span class="[ st ]">&quot;</span> <span class="[ kw ]">|</span> <span class="[ ex ]">xclip</span> <span class="[ at ]">-selection</span> clipboard</span>
+<span id="cb9-40"><a href="#cb9-40" aria-hidden="true" tabindex="-1"></a>        <span class="[ cf ]">;;</span></span>
+<span id="cb9-41"><a href="#cb9-41" aria-hidden="true" tabindex="-1"></a>    <span class="[ cf ]">esac</span></span>
+<span id="cb9-42"><a href="#cb9-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-43"><a href="#cb9-43" aria-hidden="true" tabindex="-1"></a>    <span class="[ co ]"># Print a message that the selected command</span></span>
+<span id="cb9-44"><a href="#cb9-44" aria-hidden="true" tabindex="-1"></a>    <span class="[ co ]"># has been copied</span></span>
+<span id="cb9-45"><a href="#cb9-45" aria-hidden="true" tabindex="-1"></a>    <span class="[ bu ]">echo</span> <span class="[ st ]">&quot;Copied to clipboard: </span><span class="[ va ]">$cmd</span><span class="[ st ]">&quot;</span></span>
+<span id="cb9-46"><a href="#cb9-46" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-47"><a href="#cb9-47" aria-hidden="true" tabindex="-1"></a>    <span class="[ co ]"># Exit with the success code</span></span>
+<span id="cb9-48"><a href="#cb9-48" aria-hidden="true" tabindex="-1"></a>    <span class="[ bu ]">exit</span> 0</span>
+<span id="cb9-49"><a href="#cb9-49" aria-hidden="true" tabindex="-1"></a>  <span class="[ co ]"># If the selected action is to execute</span></span>
+<span id="cb9-50"><a href="#cb9-50" aria-hidden="true" tabindex="-1"></a>  <span class="[ cf ]">elif</span> <span class="[ kw ]">[[</span> <span class="[ st ]">&quot;</span><span class="[ va ]">$action</span><span class="[ st ]">&quot;</span> <span class="[ ot ]">==</span> e<span class="[ pp ]">*</span> <span class="[ kw ]">]];</span> <span class="[ cf ]">then</span></span>
+<span id="cb9-51"><a href="#cb9-51" aria-hidden="true" tabindex="-1"></a>    <span class="[ co ]"># Print a message that the selected command</span></span>
+<span id="cb9-52"><a href="#cb9-52" aria-hidden="true" tabindex="-1"></a>    <span class="[ co ]"># is being executed</span></span>
+<span id="cb9-53"><a href="#cb9-53" aria-hidden="true" tabindex="-1"></a>    <span class="[ bu ]">echo</span> <span class="[ st ]">&quot;Executing: </span><span class="[ va ]">$cmd</span><span class="[ st ]">&quot;</span></span>
+<span id="cb9-54"><a href="#cb9-54" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-55"><a href="#cb9-55" aria-hidden="true" tabindex="-1"></a>    <span class="[ co ]"># Execute the selected command</span></span>
+<span id="cb9-56"><a href="#cb9-56" aria-hidden="true" tabindex="-1"></a>    <span class="[ bu ]">eval</span> <span class="[ st ]">&quot;</span><span class="[ va ]">$cmd</span><span class="[ st ]">&quot;</span></span>
+<span id="cb9-57"><a href="#cb9-57" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-58"><a href="#cb9-58" aria-hidden="true" tabindex="-1"></a>    <span class="[ co ]"># Exit with the success code</span></span>
+<span id="cb9-59"><a href="#cb9-59" aria-hidden="true" tabindex="-1"></a>    <span class="[ bu ]">exit</span> 0</span>
+<span id="cb9-60"><a href="#cb9-60" aria-hidden="true" tabindex="-1"></a>  <span class="[ co ]"># If the selected action is to quit</span></span>
+<span id="cb9-61"><a href="#cb9-61" aria-hidden="true" tabindex="-1"></a>  <span class="[ cf ]">elif</span> <span class="[ kw ]">[[</span> <span class="[ st ]">&quot;</span><span class="[ va ]">$action</span><span class="[ st ]">&quot;</span> <span class="[ ot ]">==</span> q<span class="[ pp ]">*</span> <span class="[ kw ]">]];</span> <span class="[ cf ]">then</span></span>
+<span id="cb9-62"><a href="#cb9-62" aria-hidden="true" tabindex="-1"></a>    <span class="[ co ]"># Exit with the success code</span></span>
+<span id="cb9-63"><a href="#cb9-63" aria-hidden="true" tabindex="-1"></a>    <span class="[ bu ]">exit</span> 0</span>
+<span id="cb9-64"><a href="#cb9-64" aria-hidden="true" tabindex="-1"></a>  <span class="[ cf ]">else</span></span>
+<span id="cb9-65"><a href="#cb9-65" aria-hidden="true" tabindex="-1"></a>    <span class="[ co ]"># Print a warning message to enter a valid action</span></span>
+<span id="cb9-66"><a href="#cb9-66" aria-hidden="true" tabindex="-1"></a>    <span class="[ bu ]">echo</span> <span class="[ st ]">&quot;Only copy (c), execute (e) or quit (q)?&quot;</span></span>
+<span id="cb9-67"><a href="#cb9-67" aria-hidden="true" tabindex="-1"></a>  <span class="[ cf ]">fi</span></span>
+<span id="cb9-68"><a href="#cb9-68" aria-hidden="true" tabindex="-1"></a><span class="[ cf ]">done</span></span></code></pre>
+</div>
+      <!-- block-start: back-to-top -->
+      <p class="[ color-mono-07 ]"><a href="#back-to-top">&#8593; Back to top</a></p>
+      <!-- block-end: back-to-top -->
+
+      <h3 id="full-implementation">
+        <a href="#full-implementation">Full implementation</a>
+      </h3>
+<div class="[ codeblock ] [ tab ]">
+<label class="[ tab__name ]">cmd</label>
+<pre class="[ tab__panel ]"><code><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="[ co ]">#!/usr/bin/env bash</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="[ co ]"># The optional category passed as an argument</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="[ va ]">category</span><span class="[ op ]">=</span><span class="[ st ]">&quot;</span><span class="[ va ]">$1</span><span class="[ st ]">&quot;</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="[ co ]"># The directory of all command files</span></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="[ va ]">cmd_dir</span><span class="[ op ]">=</span><span class="[ st ]">&quot;.&quot;</span></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a><span class="[ co ]"># The path to the command file based on the category</span></span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a><span class="[ va ]">cmd_file</span><span class="[ op ]">=</span><span class="[ st ]">&quot;</span><span class="[ va ]">$cmd_dir</span><span class="[ st ]">/cmd-</span><span class="[ va ]">$category</span><span class="[ st ]">.txt&quot;</span></span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a><span class="[ co ]"># The selected command based on the category</span></span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a><span class="[ va ]">cmd</span><span class="[ op ]">=</span><span class="[ st ]">&quot;&quot;</span></span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a><span class="[ co ]"># === Find command with fzf ===</span></span>
+<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a><span class="[ co ]"># If no argument is provided, i.e. no category</span></span>
+<span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a><span class="[ cf ]">if</span> <span class="[ kw ]">[[</span> <span class="[ va ]">$#</span> <span class="[ ot ]">-eq</span> 0 <span class="[ kw ]">]];</span> <span class="[ cf ]">then</span></span>
+<span id="cb10-19"><a href="#cb10-19" aria-hidden="true" tabindex="-1"></a>  <span class="[ co ]"># Get commands in all command files whose filename </span></span>
+<span id="cb10-20"><a href="#cb10-20" aria-hidden="true" tabindex="-1"></a>  <span class="[ co ]"># pattern is &quot;cmd-*.txt&quot; in the &quot;cmd_dir&quot; directory</span></span>
+<span id="cb10-21"><a href="#cb10-21" aria-hidden="true" tabindex="-1"></a>  <span class="[ va ]">cmds</span><span class="[ op ]">=</span><span class="[ va ]">$(</span><span class="[ fu ]">find</span> <span class="[ st ]">&quot;</span><span class="[ va ]">$cmd_dir</span><span class="[ st ]">&quot;</span> <span class="[ at ]">-maxdepth</span> 1 <span class="[ at ]">-name</span> <span class="[ st ]">&quot;cmd-*.txt&quot;</span> <span class="[ at ]">-exec</span> cat {} <span class="[ st ]">&#39;+&#39;</span><span class="[ va ]">)</span></span>
+<span id="cb10-22"><a href="#cb10-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-23"><a href="#cb10-23" aria-hidden="true" tabindex="-1"></a>  <span class="[ co ]"># Find a command entry across all found command files</span></span>
+<span id="cb10-24"><a href="#cb10-24" aria-hidden="true" tabindex="-1"></a>  <span class="[ va ]">cmd</span><span class="[ op ]">=</span><span class="[ va ]">$(</span><span class="[ bu ]">echo</span> <span class="[ st ]">&quot;</span><span class="[ va ]">$cmds</span><span class="[ st ]">&quot;</span> <span class="[ kw ]">|</span> <span class="[ ex ]">fzf</span><span class="[ va ]">)</span></span>
+<span id="cb10-25"><a href="#cb10-25" aria-hidden="true" tabindex="-1"></a><span class="[ co ]"># If the command file exists based on the category</span></span>
+<span id="cb10-26"><a href="#cb10-26" aria-hidden="true" tabindex="-1"></a><span class="[ cf ]">elif</span> <span class="[ kw ]">[[</span> <span class="[ ot ]">-e</span> <span class="[ st ]">&quot;</span><span class="[ va ]">$cmd_file</span><span class="[ st ]">&quot;</span> <span class="[ kw ]">]];</span> <span class="[ cf ]">then</span></span>
+<span id="cb10-27"><a href="#cb10-27" aria-hidden="true" tabindex="-1"></a>  <span class="[ co ]"># Find a command entry within the command file</span></span>
+<span id="cb10-28"><a href="#cb10-28" aria-hidden="true" tabindex="-1"></a>  <span class="[ va ]">cmd</span><span class="[ op ]">=</span><span class="[ va ]">$(</span><span class="[ ex ]">fzf</span> <span class="[ op ]">&lt;</span> <span class="[ st ]">&quot;</span><span class="[ va ]">$cmd_file</span><span class="[ st ]">&quot;</span><span class="[ va ]">)</span></span>
+<span id="cb10-29"><a href="#cb10-29" aria-hidden="true" tabindex="-1"></a><span class="[ co ]"># If the command file is not found based on the category</span></span>
+<span id="cb10-30"><a href="#cb10-30" aria-hidden="true" tabindex="-1"></a><span class="[ cf ]">else</span></span>
+<span id="cb10-31"><a href="#cb10-31" aria-hidden="true" tabindex="-1"></a>  <span class="[ co ]"># Print the not found error message</span></span>
+<span id="cb10-32"><a href="#cb10-32" aria-hidden="true" tabindex="-1"></a>  <span class="[ bu ]">echo</span> <span class="[ st ]">&quot;</span><span class="[ va ]">$cmd_file</span><span class="[ st ]">: No such file&quot;</span></span>
+<span id="cb10-33"><a href="#cb10-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-34"><a href="#cb10-34" aria-hidden="true" tabindex="-1"></a>  <span class="[ co ]"># Exit with the error code</span></span>
+<span id="cb10-35"><a href="#cb10-35" aria-hidden="true" tabindex="-1"></a>  <span class="[ bu ]">exit</span> 1</span>
+<span id="cb10-36"><a href="#cb10-36" aria-hidden="true" tabindex="-1"></a><span class="[ cf ]">fi</span></span>
+<span id="cb10-37"><a href="#cb10-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-38"><a href="#cb10-38" aria-hidden="true" tabindex="-1"></a><span class="[ co ]"># If the &quot;cmd&quot; variable is empty,</span></span>
+<span id="cb10-39"><a href="#cb10-39" aria-hidden="true" tabindex="-1"></a><span class="[ co ]"># i.e. no command entry is selected</span></span>
+<span id="cb10-40"><a href="#cb10-40" aria-hidden="true" tabindex="-1"></a><span class="[ cf ]">if</span> <span class="[ kw ]">[[</span> <span class="[ ot ]">-z</span> <span class="[ st ]">&quot;</span><span class="[ va ]">$cmd</span><span class="[ st ]">&quot;</span> <span class="[ kw ]">]];</span> <span class="[ cf ]">then</span></span>
+<span id="cb10-41"><a href="#cb10-41" aria-hidden="true" tabindex="-1"></a>  <span class="[ co ]"># Exit with the success code</span></span>
+<span id="cb10-42"><a href="#cb10-42" aria-hidden="true" tabindex="-1"></a>  <span class="[ bu ]">exit</span> 0</span>
+<span id="cb10-43"><a href="#cb10-43" aria-hidden="true" tabindex="-1"></a><span class="[ cf ]">fi</span></span>
+<span id="cb10-44"><a href="#cb10-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-45"><a href="#cb10-45" aria-hidden="true" tabindex="-1"></a><span class="[ co ]"># Remove the &quot;description: &quot; prefix to get</span></span>
+<span id="cb10-46"><a href="#cb10-46" aria-hidden="true" tabindex="-1"></a><span class="[ co ]"># the command from the selected command entry</span></span>
+<span id="cb10-47"><a href="#cb10-47" aria-hidden="true" tabindex="-1"></a><span class="[ va ]">cmd</span><span class="[ op ]">=</span><span class="[ va ]">${cmd</span><span class="[ op ]">#</span><span class="[ pp ]">*</span>: <span class="[ va ]">}</span></span>
+<span id="cb10-48"><a href="#cb10-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-49"><a href="#cb10-49" aria-hidden="true" tabindex="-1"></a><span class="[ co ]"># Trim leading spaces</span></span>
+<span id="cb10-50"><a href="#cb10-50" aria-hidden="true" tabindex="-1"></a><span class="[ va ]">cmd</span><span class="[ op ]">=</span><span class="[ va ]">${cmd</span><span class="[ op ]">/#</span><span class="[ ss ]">[[:space:]]</span><span class="[ op ]">/</span><span class="[ va ]">}</span></span>
+<span id="cb10-51"><a href="#cb10-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-52"><a href="#cb10-52" aria-hidden="true" tabindex="-1"></a><span class="[ co ]"># Trim trailing spaces</span></span>
+<span id="cb10-53"><a href="#cb10-53" aria-hidden="true" tabindex="-1"></a><span class="[ va ]">cmd</span><span class="[ op ]">=</span><span class="[ va ]">${cmd</span><span class="[ op ]">/%</span><span class="[ ss ]">[[:space:]]</span><span class="[ op ]">/</span><span class="[ va ]">}</span></span>
+<span id="cb10-54"><a href="#cb10-54" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-55"><a href="#cb10-55" aria-hidden="true" tabindex="-1"></a><span class="[ co ]"># Print the selected command</span></span>
+<span id="cb10-56"><a href="#cb10-56" aria-hidden="true" tabindex="-1"></a><span class="[ bu ]">echo</span> <span class="[ st ]">&quot;Selected command: </span><span class="[ va ]">$cmd</span><span class="[ st ]">&quot;</span></span>
+<span id="cb10-57"><a href="#cb10-57" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-58"><a href="#cb10-58" aria-hidden="true" tabindex="-1"></a><span class="[ co ]"># === Detect placeholders and fill in values ===</span></span>
+<span id="cb10-59"><a href="#cb10-59" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-60"><a href="#cb10-60" aria-hidden="true" tabindex="-1"></a><span class="[ co ]"># Get all unique placeholders in the selected command</span></span>
+<span id="cb10-61"><a href="#cb10-61" aria-hidden="true" tabindex="-1"></a><span class="[ va ]">placeholders</span><span class="[ op ]">=</span><span class="[ va ]">$(</span><span class="[ bu ]">echo</span> <span class="[ st ]">&quot;</span><span class="[ va ]">$cmd</span><span class="[ st ]">&quot;</span> <span class="[ kw ]">|</span> <span class="[ fu ]">grep</span> <span class="[ at ]">-oE</span> <span class="[ st ]">&quot;&lt;(\w|-)+&gt;&quot;</span> <span class="[ kw ]">|</span> <span class="[ fu ]">uniq</span><span class="[ va ]">)</span></span>
+<span id="cb10-62"><a href="#cb10-62" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-63"><a href="#cb10-63" aria-hidden="true" tabindex="-1"></a><span class="[ co ]"># If the &quot;placeholders&quot; variable is not empty,</span></span>
+<span id="cb10-64"><a href="#cb10-64" aria-hidden="true" tabindex="-1"></a><span class="[ co ]"># i.e. there is at least one placeholder</span></span>
+<span id="cb10-65"><a href="#cb10-65" aria-hidden="true" tabindex="-1"></a><span class="[ cf ]">if</span> <span class="[ kw ]">[[</span> <span class="[ ot ]">-n</span> <span class="[ st ]">&quot;</span><span class="[ va ]">$placeholders</span><span class="[ st ]">&quot;</span> <span class="[ kw ]">]];</span> <span class="[ cf ]">then</span></span>
+<span id="cb10-66"><a href="#cb10-66" aria-hidden="true" tabindex="-1"></a>  <span class="[ bu ]">echo</span> <span class="[ st ]">&quot;----------------------&quot;</span></span>
+<span id="cb10-67"><a href="#cb10-67" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-68"><a href="#cb10-68" aria-hidden="true" tabindex="-1"></a>  <span class="[ co ]"># Loop through each placeholder</span></span>
+<span id="cb10-69"><a href="#cb10-69" aria-hidden="true" tabindex="-1"></a>  <span class="[ cf ]">for</span> k <span class="[ kw ]">in</span> <span class="[ va ]">$placeholders</span><span class="[ kw ]">;</span> <span class="[ cf ]">do</span></span>
+<span id="cb10-70"><a href="#cb10-70" aria-hidden="true" tabindex="-1"></a>    <span class="[ co ]"># Prompt to input a value for the placeholder</span></span>
+<span id="cb10-71"><a href="#cb10-71" aria-hidden="true" tabindex="-1"></a>    <span class="[ bu ]">read</span> <span class="[ at ]">-r</span> <span class="[ at ]">-p</span> <span class="[ st ]">&quot;</span><span class="[ va ]">$k</span><span class="[ st ]">: &quot;</span> <span class="[ va ]">v</span></span>
+<span id="cb10-72"><a href="#cb10-72" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-73"><a href="#cb10-73" aria-hidden="true" tabindex="-1"></a>    <span class="[ co ]"># Replace the placeholder in the selected command</span></span>
+<span id="cb10-74"><a href="#cb10-74" aria-hidden="true" tabindex="-1"></a>    <span class="[ co ]"># with the input value</span></span>
+<span id="cb10-75"><a href="#cb10-75" aria-hidden="true" tabindex="-1"></a>    <span class="[ va ]">cmd</span><span class="[ op ]">=</span><span class="[ va ]">${cmd</span><span class="[ op ]">//</span><span class="[ va ]">$k</span><span class="[ op ]">/</span><span class="[ va ]">$v}</span></span>
+<span id="cb10-76"><a href="#cb10-76" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-77"><a href="#cb10-77" aria-hidden="true" tabindex="-1"></a>    <span class="[ co ]"># Print the updated command after the replacement</span></span>
+<span id="cb10-78"><a href="#cb10-78" aria-hidden="true" tabindex="-1"></a>    <span class="[ bu ]">echo</span> <span class="[ st ]">&quot;Command: </span><span class="[ va ]">$cmd</span><span class="[ st ]">&quot;</span></span>
+<span id="cb10-79"><a href="#cb10-79" aria-hidden="true" tabindex="-1"></a>  <span class="[ cf ]">done</span></span>
+<span id="cb10-80"><a href="#cb10-80" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-81"><a href="#cb10-81" aria-hidden="true" tabindex="-1"></a>  <span class="[ bu ]">echo</span> <span class="[ st ]">&quot;----------------------&quot;</span></span>
+<span id="cb10-82"><a href="#cb10-82" aria-hidden="true" tabindex="-1"></a><span class="[ cf ]">fi</span></span>
+<span id="cb10-83"><a href="#cb10-83" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-84"><a href="#cb10-84" aria-hidden="true" tabindex="-1"></a><span class="[ co ]"># === Perform action on command ===</span></span>
+<span id="cb10-85"><a href="#cb10-85" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-86"><a href="#cb10-86" aria-hidden="true" tabindex="-1"></a><span class="[ co ]"># Keep prompting until a valid action is chosen</span></span>
+<span id="cb10-87"><a href="#cb10-87" aria-hidden="true" tabindex="-1"></a><span class="[ cf ]">while</span> <span class="[ fu ]">true</span><span class="[ kw ]">;</span> <span class="[ cf ]">do</span></span>
+<span id="cb10-88"><a href="#cb10-88" aria-hidden="true" tabindex="-1"></a>  <span class="[ co ]"># Prompt to input a value for the action</span></span>
+<span id="cb10-89"><a href="#cb10-89" aria-hidden="true" tabindex="-1"></a>  <span class="[ bu ]">read</span> <span class="[ at ]">-r</span> <span class="[ at ]">-p</span> <span class="[ st ]">&quot;copy (c), execute (e) or quit (q)? &quot;</span> <span class="[ va ]">action</span></span>
+<span id="cb10-90"><a href="#cb10-90" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-91"><a href="#cb10-91" aria-hidden="true" tabindex="-1"></a>  <span class="[ co ]"># Transform the input value to lowercase</span></span>
+<span id="cb10-92"><a href="#cb10-92" aria-hidden="true" tabindex="-1"></a>  <span class="[ co ]"># for easier matching</span></span>
+<span id="cb10-93"><a href="#cb10-93" aria-hidden="true" tabindex="-1"></a>  <span class="[ va ]">action</span><span class="[ op ]">=</span><span class="[ va ]">$(</span><span class="[ bu ]">echo</span> <span class="[ st ]">&quot;</span><span class="[ va ]">$action</span><span class="[ st ]">&quot;</span> <span class="[ kw ]">|</span> <span class="[ fu ]">tr</span> <span class="[ st ]">&quot;[:upper:]&quot;</span> <span class="[ st ]">&quot;[:lower:]&quot;</span><span class="[ va ]">)</span></span>
+<span id="cb10-94"><a href="#cb10-94" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-95"><a href="#cb10-95" aria-hidden="true" tabindex="-1"></a>  <span class="[ co ]"># If the selected action is to copy</span></span>
+<span id="cb10-96"><a href="#cb10-96" aria-hidden="true" tabindex="-1"></a>  <span class="[ cf ]">if</span> <span class="[ kw ]">[[</span> <span class="[ st ]">&quot;</span><span class="[ va ]">$action</span><span class="[ st ]">&quot;</span> <span class="[ ot ]">==</span> c<span class="[ pp ]">*</span> <span class="[ kw ]">]];</span> <span class="[ cf ]">then</span></span>
+<span id="cb10-97"><a href="#cb10-97" aria-hidden="true" tabindex="-1"></a>    <span class="[ co ]"># Get the operating system</span></span>
+<span id="cb10-98"><a href="#cb10-98" aria-hidden="true" tabindex="-1"></a>    <span class="[ va ]">os</span><span class="[ op ]">=</span><span class="[ va ]">$(</span><span class="[ fu ]">uname</span> <span class="[ at ]">-s</span><span class="[ va ]">)</span></span>
+<span id="cb10-99"><a href="#cb10-99" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-100"><a href="#cb10-100" aria-hidden="true" tabindex="-1"></a>    <span class="[ cf ]">case</span> <span class="[ st ]">&quot;</span><span class="[ va ]">$os</span><span class="[ st ]">&quot;</span> <span class="[ kw ]">in</span></span>
+<span id="cb10-101"><a href="#cb10-101" aria-hidden="true" tabindex="-1"></a>      <span class="[ co ]"># If OS is macOS</span></span>
+<span id="cb10-102"><a href="#cb10-102" aria-hidden="true" tabindex="-1"></a>      <span class="[ ss ]">Darwin</span><span class="[ pp ]">*</span><span class="[ kw ]">)</span></span>
+<span id="cb10-103"><a href="#cb10-103" aria-hidden="true" tabindex="-1"></a>        <span class="[ co ]"># Copy the selected command to clipboard</span></span>
+<span id="cb10-104"><a href="#cb10-104" aria-hidden="true" tabindex="-1"></a>        <span class="[ bu ]">echo</span> <span class="[ at ]">-n</span> <span class="[ st ]">&quot;</span><span class="[ va ]">$cmd</span><span class="[ st ]">&quot;</span> <span class="[ kw ]">|</span> <span class="[ ex ]">pbcopy</span></span>
+<span id="cb10-105"><a href="#cb10-105" aria-hidden="true" tabindex="-1"></a>        <span class="[ cf ]">;;</span></span>
+<span id="cb10-106"><a href="#cb10-106" aria-hidden="true" tabindex="-1"></a>      <span class="[ co ]"># If OS is Linux</span></span>
+<span id="cb10-107"><a href="#cb10-107" aria-hidden="true" tabindex="-1"></a>      <span class="[ ss ]">Linux</span><span class="[ pp ]">*</span><span class="[ kw ]">)</span></span>
+<span id="cb10-108"><a href="#cb10-108" aria-hidden="true" tabindex="-1"></a>        <span class="[ co ]"># Copy the selected command to clipboard</span></span>
+<span id="cb10-109"><a href="#cb10-109" aria-hidden="true" tabindex="-1"></a>        <span class="[ bu ]">echo</span> <span class="[ at ]">-n</span> <span class="[ st ]">&quot;</span><span class="[ va ]">$cmd</span><span class="[ st ]">&quot;</span> <span class="[ kw ]">|</span> <span class="[ ex ]">xclip</span> <span class="[ at ]">-selection</span> clipboard</span>
+<span id="cb10-110"><a href="#cb10-110" aria-hidden="true" tabindex="-1"></a>        <span class="[ cf ]">;;</span></span>
+<span id="cb10-111"><a href="#cb10-111" aria-hidden="true" tabindex="-1"></a>    <span class="[ cf ]">esac</span></span>
+<span id="cb10-112"><a href="#cb10-112" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-113"><a href="#cb10-113" aria-hidden="true" tabindex="-1"></a>    <span class="[ co ]"># Print a message that the selected command</span></span>
+<span id="cb10-114"><a href="#cb10-114" aria-hidden="true" tabindex="-1"></a>    <span class="[ co ]"># has been copied</span></span>
+<span id="cb10-115"><a href="#cb10-115" aria-hidden="true" tabindex="-1"></a>    <span class="[ bu ]">echo</span> <span class="[ st ]">&quot;Copied to clipboard: </span><span class="[ va ]">$cmd</span><span class="[ st ]">&quot;</span></span>
+<span id="cb10-116"><a href="#cb10-116" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-117"><a href="#cb10-117" aria-hidden="true" tabindex="-1"></a>    <span class="[ co ]"># Exit with the success code</span></span>
+<span id="cb10-118"><a href="#cb10-118" aria-hidden="true" tabindex="-1"></a>    <span class="[ bu ]">exit</span> 0</span>
+<span id="cb10-119"><a href="#cb10-119" aria-hidden="true" tabindex="-1"></a>  <span class="[ co ]"># If the selected action is to execute</span></span>
+<span id="cb10-120"><a href="#cb10-120" aria-hidden="true" tabindex="-1"></a>  <span class="[ cf ]">elif</span> <span class="[ kw ]">[[</span> <span class="[ st ]">&quot;</span><span class="[ va ]">$action</span><span class="[ st ]">&quot;</span> <span class="[ ot ]">==</span> e<span class="[ pp ]">*</span> <span class="[ kw ]">]];</span> <span class="[ cf ]">then</span></span>
+<span id="cb10-121"><a href="#cb10-121" aria-hidden="true" tabindex="-1"></a>    <span class="[ co ]"># Print a message that the selected command</span></span>
+<span id="cb10-122"><a href="#cb10-122" aria-hidden="true" tabindex="-1"></a>    <span class="[ co ]"># is being executed</span></span>
+<span id="cb10-123"><a href="#cb10-123" aria-hidden="true" tabindex="-1"></a>    <span class="[ bu ]">echo</span> <span class="[ st ]">&quot;Executing: </span><span class="[ va ]">$cmd</span><span class="[ st ]">&quot;</span></span>
+<span id="cb10-124"><a href="#cb10-124" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-125"><a href="#cb10-125" aria-hidden="true" tabindex="-1"></a>    <span class="[ co ]"># Execute the selected command</span></span>
+<span id="cb10-126"><a href="#cb10-126" aria-hidden="true" tabindex="-1"></a>    <span class="[ bu ]">eval</span> <span class="[ st ]">&quot;</span><span class="[ va ]">$cmd</span><span class="[ st ]">&quot;</span></span>
+<span id="cb10-127"><a href="#cb10-127" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-128"><a href="#cb10-128" aria-hidden="true" tabindex="-1"></a>    <span class="[ co ]"># Exit with the success code</span></span>
+<span id="cb10-129"><a href="#cb10-129" aria-hidden="true" tabindex="-1"></a>    <span class="[ bu ]">exit</span> 0</span>
+<span id="cb10-130"><a href="#cb10-130" aria-hidden="true" tabindex="-1"></a>  <span class="[ co ]"># If the selected action is to quit</span></span>
+<span id="cb10-131"><a href="#cb10-131" aria-hidden="true" tabindex="-1"></a>  <span class="[ cf ]">elif</span> <span class="[ kw ]">[[</span> <span class="[ st ]">&quot;</span><span class="[ va ]">$action</span><span class="[ st ]">&quot;</span> <span class="[ ot ]">==</span> q<span class="[ pp ]">*</span> <span class="[ kw ]">]];</span> <span class="[ cf ]">then</span></span>
+<span id="cb10-132"><a href="#cb10-132" aria-hidden="true" tabindex="-1"></a>    <span class="[ co ]"># Exit with the success code</span></span>
+<span id="cb10-133"><a href="#cb10-133" aria-hidden="true" tabindex="-1"></a>    <span class="[ bu ]">exit</span> 0</span>
+<span id="cb10-134"><a href="#cb10-134" aria-hidden="true" tabindex="-1"></a>  <span class="[ cf ]">else</span></span>
+<span id="cb10-135"><a href="#cb10-135" aria-hidden="true" tabindex="-1"></a>    <span class="[ co ]"># Print a warning message to enter a valid action</span></span>
+<span id="cb10-136"><a href="#cb10-136" aria-hidden="true" tabindex="-1"></a>    <span class="[ bu ]">echo</span> <span class="[ st ]">&quot;Only copy (c), execute (e) or quit (q)?&quot;</span></span>
+<span id="cb10-137"><a href="#cb10-137" aria-hidden="true" tabindex="-1"></a>  <span class="[ cf ]">fi</span></span>
+<span id="cb10-138"><a href="#cb10-138" aria-hidden="true" tabindex="-1"></a><span class="[ cf ]">done</span></span></code></pre>
+</div>
+      <p>Remember to run the below command to make <code>cmd</code> executable:</p>
+<div class="[ codeblock ] [ tab ]">
+<label class="[ tab__name ]">shell</label>
+<pre class="[ tab__panel ]"><code><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="[ fu ]">chmod</span> +x ./cmd</span></code></pre>
+</div>
+      <p>Now run it with all categories:</p>
+<div class="[ codeblock ] [ tab ]">
+<label class="[ tab__name ]">shell</label>
+<pre class="[ tab__panel ]"><code><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="[ ex ]">./cmd</span></span></code></pre>
+</div>
+      <p>Or, run it with the <code>git</code> category:</p>
+<div class="[ codeblock ] [ tab ]">
+<label class="[ tab__name ]">shell</label>
+<pre class="[ tab__panel ]"><code><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="[ ex ]">./cmd</span> git</span></code></pre>
+</div>
+      <p>To make the <code>cmd</code> command accessible from anywhere, you can either add the path
+      to the directory containing it to your <code>$PATH</code> environment variable,</p>
+<div class="[ codeblock ] [ tab ]">
+<label class="[ tab__name ]">.zshrc/.bashrc</label>
+<pre class="[ tab__panel ]"><code><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="[ bu ]">export</span> <span class="[ va ]">PATH</span><span class="[ op ]">=</span><span class="[ st ]">&quot;</span><span class="[ va ]">$PATH</span><span class="[ st ]">:path-to-directory-containing-cmd&quot;</span></span></code></pre>
+</div>
+      <p>or move it along with the <code>cmd-*.txt</code> files into a directory that is already
+      included in your <code>$PATH</code>.</p>
+      <!-- block-start: back-to-top -->
+      <p class="[ color-mono-07 ]"><a href="#back-to-top">&#8593; Back to top</a></p>
+      <!-- block-end: back-to-top -->
+
+      <h2 id="final-words">
+        <a href="#final-words">Final words</a>
+      </h2>
+      <p>I hope you enjoy the process of building and learn something along the way. I
+      often build something simple using tools already available on my machine, if the
+      existing solutions are more complex than necessary for my needs. As a result, I
+      have a chance to learn something new while producing fairly-good-and-simple
+      tools to serve my daily tasks.</p>
+      <!-- block-start: back-to-top -->
+      <p class="[ color-mono-07 ]"><a href="#back-to-top">&#8593; Back to top</a></p>
+      <!-- block-end: back-to-top -->
+    </article>
+
+    <!-- block-start: cheers -->
+    <p>
+      Cheers,<br>
+      Nam Nguyen
+    </p>
+    <!-- block-end: cheers -->
+
+    <!-- block-start: back-to-writing -->
+    <p><a class="[ color-mono-07 ]" href="/writing">$ cd ~/writing</a></p>
+    <!-- block-end: back-to-writing -->
+  </main>
+
+  <!-- block-start: footer -->
+  <footer>
+    <p>Always remember to love yourself. ٩( ᐛ )و</p>
+    <div class="[ flow-x ] [ mt-2 ]">
+      <a href="#back-to-top">Top</a>
+      <a href="/writing/bookmarks">Bookmarks</a>
+      <a href="/404">404</a>
+    </div>
+  </footer>
+  <!-- block-end: footer -->
+</body>
+
+</html>
