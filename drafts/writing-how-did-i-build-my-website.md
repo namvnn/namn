@@ -20,7 +20,7 @@ understanding how technologies work under the hood and sharing my thoughts on
 topics that intrigue me. This new website will become a space for exploration,
 experiment and writing.
 
-The source code of my new website can be found at [namvnn/namvnn.github.io](https://github.com/namvnn/namvnn.github.io).
+The source code of my new website can be found at [namvnn/namn](https://github.com/namvnn/namn).
 
 ## Tech stack
 
@@ -80,7 +80,7 @@ I copied Pandoc's [code syntax highlighting
 style](https://pandoc.org/demos.html#:~:text=Syntax%20highlighting%20of%20delimited%20code%20blocks%3A),
 then adjusted it to align with my preferences. My tweaked version of code syntax
 highlighting in CSS is available at
-[styles/code.css](https://github.com/namvnn/namvnn.github.io/blob/main/src/styles/code.css).
+[styles/code.css](https://github.com/namvnn/namn/blob/main/src/styles/code.css).
 It supports both light and dark mode.
 
 For example:
@@ -196,7 +196,7 @@ src/projects.html
 ```
 
 5. Run `scripts/block.sh` with the block name (i.e. `header`). The script can
-be found in [scripts/block.sh](https://github.com/namvnn/namvnn.github.io/blob/main/scripts/block.sh).
+be found in [scripts/block.sh](https://github.com/namvnn/namn/blob/main/scripts/block.sh).
 
 shell
 ```sh
