@@ -1,9 +1,0 @@
-@import "./utils/flex";
-.footer {
-  @include flex-center(center, center);
-  font-size: 0.8rem;
-  margin-top: 2rem;
-  color: var(--additional);
-  background: var(--dark-letter);
-  font-weight: bold;
-}
