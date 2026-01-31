@@ -13,7 +13,7 @@ automates repeated tasks such as running a development server, building the webs
 deploying the website, and cleaning up.
 - [GNU sed](https://www.gnu.org/software/sed) updates repeated HTML blocks.
 - [Pandoc](https://pandoc.org) converts Markdown to HTML.
-- [GitHub Pages](https://pages.github.com) hosts the website.
+- [Cloudflare Pages](https://pages.cloudflare.com) hosts the website.
 
 ## License
 
