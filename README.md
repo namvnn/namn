@@ -1,6 +1,6 @@
 # My Website
 
-The major technologies I have used to build [my website](https://namvnn.github.io):
+The major technologies I have used to build [my website](https://namn.me):
 
 - [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML) defines the website's
 structure and content.
