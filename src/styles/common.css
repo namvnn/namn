@@ -320,9 +320,9 @@ footer {
     color: var(--color-mono-07);
 }
 
-.text-lg {
-    font-size: var(--text-lg);
-    line-height: var(--text-lg--line-height);
+.text-xl {
+    font-size: var(--text-xl);
+    line-height: var(--text-xl--line-height);
 }
 
 .mt-2 {
