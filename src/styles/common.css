@@ -7,7 +7,7 @@
     --light: var(--ON);
     --dark: var(--OFF);
 
-    --color-x: var(--light, #7f00ff) var(--dark, #c182ff);
+    --color-purple: var(--light, #7f00ff) var(--dark, #c182ff);
 
     --color-mono-00: var(--light, #ffffff) var(--dark, #111111);
     --color-mono-01: var(--light, #fafafa) var(--dark, #141414);
@@ -24,8 +24,6 @@
 
     --color-fg: var(--color-mono-11);
     --color-bg: var(--color-mono-00);
-
-    --color-primary: #ff4500;
 
     --spacing: 0.25rem;
 
@@ -219,11 +217,11 @@ h3 {
 }
 
 a {
-    color: var(--color-x);
+    color: var(--color-purple);
     -webkit-text-decoration: inherit;
     text-decoration: inherit;
     text-decoration-line: underline;
-    text-decoration-color: var(--color-x);
+    text-decoration-color: var(--color-purple);
     text-decoration-style: dotted;
     text-decoration-thickness: calc(var(--spacing) * 0.35);
     text-underline-offset: var(--spacing);
@@ -241,7 +239,7 @@ a[data-line="none"] {
     text-decoration: none;
 }
 a[href^="http"]::after {
-    --anchor-icon-color: var(--color-x);
+    --anchor-icon-color: var(--color-purple);
     --anchor-icon-size: 0.75em;
     --anchor-icon-spacing: calc(var(--spacing) * 0.5);
 
@@ -263,10 +261,13 @@ a[href^="http"][data-anchor="none"]::after {
 }
 
 code {
-    color: var(--color-x);
     font-family: var(--font-mono);
     font-size: 0.9rem;
-    font-weight: var(--font-weight-bold);
+}
+
+code:not(pre code) {
+    color: var(--light, #7b6e0e) var(--dark, #f3ea6c);
+    background-color: var(--light, #fbfeda) var(--dark, #423200);
 }
 
 b, strong {
@@ -307,10 +308,6 @@ footer {
 
 .font-mono {
     font-family: var(--font-mono);
-}
-
-.color-primary {
-    color: var(--color-primary);
 }
 
 .color-mono-06 {
@@ -396,7 +393,7 @@ footer {
     --flow-x-space: calc(var(--spacing) * 4);
 }
 .navbar__logo {
-    --self-drawing-stroke-color: var(--color-x);
+    --self-drawing-stroke-color: var(--color-purple);
 
     display: inline-block;
     vertical-align: middle;
