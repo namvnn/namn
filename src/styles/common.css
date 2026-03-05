@@ -260,14 +260,13 @@ a[href^="http"][data-anchor="none"]::after {
     display: none;
 }
 
-code {
+code:not(pre code) {
     font-family: var(--font-mono);
     font-size: 0.9rem;
-}
-
-code:not(pre code) {
     color: var(--light, #7b6e0e) var(--dark, #f3ea6c);
     background-color: var(--light, #fbfeda) var(--dark, #423200);
+    padding: calc(var(--spacing) * 0.25) calc(var(--spacing) * 0.5);
+    border-radius: var(--radius-xs);
 }
 
 b, strong {
