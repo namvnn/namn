@@ -45,12 +45,13 @@ block:
 
 .PHONY: gen
 gen:
+	# kate for light, breezedark for dark
 	@echo "Generating $(DRAFTS_PATH)/$(DRAFT).html..."
 	@pandoc $(DRAFTS_PATH)/$(DRAFT).md \
 		--toc \
 		--standalone \
 		--wrap=preserve \
-		--syntax-highlighting=kate \ # kate for light, breezedark for dark
+		--syntax-highlighting=kate \
 		--output=$(DRAFTS_PATH)/$(DRAFT).html
 	@echo "Generated $(DRAFTS_PATH)/$(DRAFT).html!"
 
