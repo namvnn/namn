@@ -12,7 +12,7 @@ convincing, recommending, asking, encouraging, or whatever, me to use AI?
 I respect you using AI, so you should respect me not choosing to use AI for my
 primary coding toolbox.
 
-I don't deny that I don't use AI. Yes, I've used ChatGPT to paraphrase my Enligh
+I don't deny that I use AI. Yes, I've used ChatGPT to paraphrase my Enligh
 writing, correct English grammar and check English spelling (I don't use AI for
 this article, as I want to express my feeling, even though there can be some
 silly grammar and spellings). Yes, I've used ChatGPT to check if there are any
