@@ -13,16 +13,16 @@ I respect you using AI, so you should respect me not choosing to use AI for my
 primary coding toolbox.
 
 I don't deny that I don't use AI. Yes, I've used ChatGPT to paraphrase my Enligh
-writing, correct English grammar and check English spelling (I don't AI for this
-article, as I want to express my feeling, even though there can be some silly
-grammar and spelling). Yes, I've used ChatGPT to check if there are any
+writing, correct English grammar and check English spelling (I don't use AI for
+this article, as I want to express my feeling, even though there can be some
+silly grammar and spellings). Yes, I've used ChatGPT to check if there are any
 suggestions that I can apply to my code (mostly no better suggestions). I don't
-use it BEFORE writing article and code, but AFTER that. I want to help me as a
-tool, not a replacement where I can just write prompts. I'm not disabled :).
+use it BEFORE writing articles and code, but AFTER that. I want AI to help me as
+a tool, not a replacement where I can just write prompts. I'm not disabled :).
 
 I want to find JOY in writing code. That's why I don't have AI integrated
 directly into my editor to share inline suggestions, but instead I use ChatGPT
-web, so I can reach out it whenever I want.
+web, so I can reach out to it whenever I want.
 
 Letting AI write code for me is NOT FUN anymore. In my opinion, when AI writes
 all code for me, I can easily skip some mistakes and don't have a chance to
