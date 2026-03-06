@@ -32,10 +32,10 @@ consider trade-offs effectively and handle errors correctly. Writing code by
 myself is one of my brain exercises. If I let AI do it, my brain will become
 "lazy" and "obese". Tool is supposed to support you, not become you!
 
-AI does offer benefits, such as finding resources for learning some skills,
-doing daunting tasks, but for coding, NO THANKS. I'm probably wrong about AI. It
-can replace me. Ok, so what? I do nothing? No! It's my battle now. I'll fight
-for my ideal. I'll keep learning new areas, improving my skills and expanding my
+AI does offer benefits, such as finding resources for learning new skills, doing
+daunting tasks, but for coding, NO THANKS. I'm probably wrong about AI. It can
+replace me. Ok, so what? I do nothing? No! It's my battle now. I'll fight for my
+ideal. I'll keep learning new areas, improving my skills and expanding my
 horizon (e.g. probably system programming, or graphics programming). I try to
 become 1% better each day.
 
