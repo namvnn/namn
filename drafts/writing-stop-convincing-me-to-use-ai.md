@@ -3,7 +3,7 @@ title: Stop Convincing Me To Use AI
 lang: en
 ...
 
-Published on March 06, 2026.
+Published on March 06, 2026. Last updated on March 07, 2026.
 
 AI has been a thing recently, and most developers I talked to have been using AI
 for their daily tasks. But, can you please stop suggesting, persuading,
@@ -12,12 +12,13 @@ convincing, recommending, asking, encouraging, or whatever, me to use AI?
 I respect you using AI, so you should respect me not choosing to use AI for my
 primary coding toolbox.
 
-I don't deny that I use AI. Yes, I've used ChatGPT to paraphrase my Enligh
+I don't deny that I use AI. Yes, I've used ChatGPT to improve my English
 writing, correct English grammar and check English spelling (I don't use AI for
 this article, as I want to express my feeling, even though there can be some
 silly grammar and spellings). Yes, I've used ChatGPT to check if there are any
 suggestions that I can apply to my code (mostly no better suggestions). I don't
-use it BEFORE writing articles and code, but AFTER that. I want AI to help me as
+use it BEFORE writing articles and code, but AFTER that, so that I can review AI
+suggestions and pick what is actually reasonable to me. I want AI to help me as
 a tool, not a replacement where I can just write prompts. I'm not disabled :).
 
 I want to find JOY in writing code. That's why I don't have AI integrated
@@ -42,3 +43,9 @@ become 1% better each day.
 So, PLEASE STOP CONVINCING ME TO USE AI! THANKS!
 
 I use AI as a TOOL, but not like the way you're using AI as a "YOU" every day!
+
+P.S. I've realized how awesome it was when I wrote the article without using AI,
+which allowed me to express my real feeling, allowed the words to freely flow
+from my brain to my hands, and made me realize that my vocabulary was quite
+limited. I think that I should start writing with less AI, and studying more
+English.
