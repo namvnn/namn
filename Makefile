@@ -1,7 +1,7 @@
 # === FILES/DIRECTORIES ===
 
 SRC_PATH    := src
-TMP_PATH    := tmp
+DIST_PATH   := dist
 DRAFTS_PATH := drafts
 
 BLOCKS_DIR   := blocks
@@ -24,19 +24,28 @@ dev:
 	@cd $(SRC_PATH) && pnpx serve && echo "Command not found: pnpx"
 
 .PHONY: deploy
-deploy: tmp
-	@./scripts/deploy.sh
+deploy: checkcommit build
+	@pnpx wrangler pages deploy $(DIST_PATH) --project-name 'namnme'
 
-.PHONY: tmp
-tmp: blocks
-	@echo "\n==> Copy files in $(SRC_PATH) to $(TMP_PATH)"
-	@rsync -rPavh --delete --exclude $(BLOCKS_DIR) $(SRC_PATH)/ $(TMP_PATH)
+.PHONY: checkcommit 
+checkcommit:
+	@if [[ -n "$$(git status -s)" ]]; then \
+		echo "The repo has uncommitted changes!"; \
+		exit 1; \
+	fi
+
+.PHONY: build
+build: blocks
+	@echo "\n==> Deleting $(DIST_PATH)..."
+	@rm -rf $(DIST_PATH)
+	@echo "\n==> Preparing files..."
+	@rsync -rPavh --delete --exclude $(BLOCKS_DIR) $(SRC_PATH)/ $(DIST_PATH)
 
 .PHONY: blocks
 blocks:
 	@find $(SRC_PATH)/$(BLOCKS_DIR) -type file \
 		-exec echo ";" \
-		-exec echo "==> Update {} block in all pages" ";" \
+		-exec echo "==> Updating {} block in all pages" ";" \
 		-exec ./scripts/block.sh "{}" ";"
 
 .PHONY: block
@@ -65,4 +74,4 @@ bm:
 
 .PHONY: clean
 clean:
-	rm -rf $(TMP_PATH)
+	rm -rf $(DIST_PATH)
