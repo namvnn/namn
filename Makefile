@@ -27,7 +27,7 @@ dev:
 deploy: checkcommit build
 	@pnpx wrangler pages deploy $(DIST_PATH) --project-name 'namnme'
 
-.PHONY: checkcommit 
+.PHONY: checkcommit
 checkcommit:
 	@if [[ -n "$$(git status -s)" ]]; then \
 		echo "The repo has uncommitted changes!"; \
