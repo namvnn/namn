@@ -1,0 +1,72 @@
+.codeblock {
+    --tab-color: var(--light, #1f1c1b) var(--dark, #cfcfc2);
+
+    --tab-name-font-size: var(--text-xs);
+    --tab-name-line-height: var(--text-xs--line-height);
+
+    --tab-panel-font-size: var(--text-sm);
+    --tab-panel-line-height: var(--text-sm--line-height);
+    --tab-panel-font-family: var(--font-mono);
+    --tab-panel-overflow: auto;
+}
+
+* + .codeblock {
+    --tab-top-spacing: calc(var(--spacing) * 4);
+}
+
+.codeblock code {
+    color: var(--tab-color);
+    font-weight: var(--font-weight-normal);
+    white-space: pre;
+}
+
+/* Line number
+.codeblock code::before {
+    content:'1\00000a2\00000a3\00000a4\00000a5\00000a6\00000a7\00000a8\00000a9\00000a10\00000a11\00000a12\00000a13\00000a14\00000a15\00000a16\00000a17\00000a18\00000a19\00000a20\00000a21\00000a22\00000a23\00000a24\00000a25\00000a26\00000a27\00000a28\00000a29\00000a30\00000a31\00000a32\00000a33\00000a34\00000a35\00000a36\00000a37\00000a38\00000a39\00000a40\00000a41\00000a42\00000a43\00000a44\00000a45\00000a46\00000a47\00000a48\00000a49\00000a50\00000a51\00000a52\00000a53\00000a54\00000a55\00000a56\00000a57\00000a58\00000a59\00000a60\00000a61\00000a62\00000a63\00000a64\00000a65\00000a66\00000a67\00000a68\00000a69\00000a70\00000a71\00000a72\00000a73\00000a74\00000a75\00000a76\00000a77\00000a78\00000a79\00000a80\00000a81\00000a82\00000a83\00000a84\00000a85\00000a86\00000a87\00000a88\00000a89\00000a90\00000a91\00000a92\00000a93\00000a94\00000a95\00000a96\00000a97\00000a98\00000a99\00000a100\00000a101\00000a102\00000a103\00000a104\00000a105\00000a106\00000a107\00000a108\00000a109\00000a110\00000a111\00000a112\00000a113\00000a114\00000a115\00000a116\00000a117\00000a118\00000a119\00000a120\00000a121\00000a122\00000a123\00000a124\00000a125\00000a126\00000a127\00000a128\00000a129\00000a130\00000a131\00000a132\00000a133\00000a134\00000a135\00000a136\00000a137\00000a138\00000a139\00000a140\00000a141\00000a142\00000a143\00000a144\00000a145\00000a146\00000a147\00000a148\00000a149\00000a150\00000a151\00000a152\00000a153\00000a154\00000a155\00000a156\00000a157\00000a158\00000a159\00000a160\00000a161\00000a162\00000a163\00000a164\00000a165\00000a166\00000a167\00000a168\00000a169\00000a170\00000a171\00000a172\00000a173\00000a174\00000a175\00000a176\00000a177\00000a178\00000a179\00000a180\00000a181\00000a182\00000a183\00000a184\00000a185\00000a186\00000a187\00000a188\00000a189\00000a190\00000a191\00000a192\00000a193\00000a194\00000a195\00000a196\00000a197\00000a198\00000a199\00000a200';
+    position: absolute;
+    white-space: pre;
+    left: calc(var(--spacing) * 3);
+    top: var(--tab-panel-block-padding);
+    bottom: var(--tab-panel-block-padding);
+    overflow: hidden;
+}
+*/
+
+@media print {
+    .codeblock code {
+        white-space: pre-wrap;
+    }
+}
+
+/* Reference from Pandoc's code syntax highlighting */
+.codeblock > pre > code span    { color: var(--light, #1f1c1b) var(--dark, #cfcfc2); } /* Normal */
+.codeblock > pre > code span.al { color: var(--light, #bf0303) var(--dark, #95da4c); background-color: var(--light, #f7e6e6) var(--dark, #4d1f24); font-weight: var(--font-weight-bold); } /* Alert */
+.codeblock > pre > code span.an { color: var(--light, #ca60ca) var(--dark, #3f8058); } /* Annotation */
+.codeblock > pre > code span.at { color: var(--light, #0057ae) var(--dark, #2980b9); } /* Attribute */
+.codeblock > pre > code span.bn { color: var(--light, #b08000) var(--dark, #f67400); } /* BaseN */
+.codeblock > pre > code span.bu { color: var(--light, #644a9b) var(--dark, #7f8c8d); font-weight: var(--font-weight-bold); } /* BuiltIn */
+.codeblock > pre > code span.cf { color: var(--light, #1f1c1b) var(--dark, #fdbc4b); font-weight: var(--font-weight-bold); } /* ControlFlow */
+.codeblock > pre > code span.ch { color: var(--light, #924c9d) var(--dark, #3daee9); } /* Char */
+.codeblock > pre > code span.cn { color: var(--light, #aa5500) var(--dark, #27aeae); font-weight: var(--font-weight-bold); } /* Constant */
+.codeblock > pre > code span.co { color: var(--light, #898887) var(--dark, #7a7c7d); } /* Comment */
+.codeblock > pre > code span.cv { color: var(--light, #0095ff) var(--dark, #7f8c8d); } /* CommentVar */
+.codeblock > pre > code span.do { color: var(--light, #607880) var(--dark, #a43340); } /* Documentation */
+.codeblock > pre > code span.dt { color: var(--light, #0057ae) var(--dark, #2980b9); } /* DataType */
+.codeblock > pre > code span.dv { color: var(--light, #b08000) var(--dark, #f67400); } /* DecVal */
+.codeblock > pre > code span.er { color: var(--light, #bf0303) var(--dark, #da4453); text-decoration: underline; } /* Error */
+.codeblock > pre > code span.ex { color: var(--light, #0095ff) var(--dark, #0099ff); font-weight: var(--font-weight-bold); } /* Extension */
+.codeblock > pre > code span.fl { color: var(--light, #b08000) var(--dark, #f67400); } /* Float */
+.codeblock > pre > code span.fu { color: var(--light, #644a9b) var(--dark, #8e44ad); } /* Function */
+.codeblock > pre > code span.im { color: var(--light, #ff5500) var(--dark, #27ae60); } /* Import */
+.codeblock > pre > code span.in { color: var(--light, #b08000) var(--dark, #c45b00); } /* Information */
+.codeblock > pre > code span.kw { color: var(--light, #1f1c1b) var(--dark, #cfcfc2); font-weight: var(--font-weight-bold); } /* Keyword */
+.codeblock > pre > code span.op { color: var(--light, #1f1c1b) var(--dark, #cfcfc2); } /* Operator */
+.codeblock > pre > code span.ot { color: var(--light, #006e28) var(--dark, #27ae60); } /* Other */
+.codeblock > pre > code span.pp { color: var(--light, #006e28) var(--dark, #27ae60); } /* Preprocessor */
+.codeblock > pre > code span.re { color: var(--light, #0057ae) var(--dark, #2980b9); background-color: var(--light, #e0e9f8) var(--dark, #153042); } /* RegionMarker */
+.codeblock > pre > code span.sc { color: var(--light, #3daee9) var(--dark, #3daee9); } /* SpecialChar */
+.codeblock > pre > code span.ss { color: var(--light, #ff5500) var(--dark, #da4453); } /* SpecialString */
+.codeblock > pre > code span.st { color: var(--light, #bf0303) var(--dark, #f44f4f); } /* String */
+.codeblock > pre > code span.va { color: var(--light, #0057ae) var(--dark, #27aeae); } /* Variable */
+.codeblock > pre > code span.vs { color: var(--light, #bf0303) var(--dark, #da4453); } /* VerbatimString */
+.codeblock > pre > code span.wa { color: var(--light, #bf0303) var(--dark, #da4453); } /* Warning */

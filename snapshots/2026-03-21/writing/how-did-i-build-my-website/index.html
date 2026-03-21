@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- block-start: head-common -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="author" content="Nam Nguyen" />
+  <meta name="color-scheme" content="light dark" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Nam Nguyen" />
+  <link rel="stylesheet" href="/styles/common.css" />
+  <link rel="icon" href="/images/favicon-light.svg" type="image/svg+xml" media="(prefers-color-scheme:no-preference)" />
+  <link rel="icon" href="/images/favicon-dark.svg" type="image/svg+xml" media="(prefers-color-scheme:dark)" />
+  <link rel="icon" href="/images/favicon-light.svg" type="image/svg+xml" media="(prefers-color-scheme:light)" />
+  <!-- block-end: head-common -->
+
+  <!-- block-start: style-writing -->
+  <link rel="stylesheet" href="/styles/writing.css" />
+  <link rel="stylesheet" href="/styles/code.css" />
+  <!-- block-end: style-writing -->
+
+  <title>How Did I Build My Website? | Nam Nguyen</title>
+  <meta property="og:title" content="How Did I Build My Website? | Nam Nguyen" />
+  <meta name="description" content="Writing my website in pure HTML and CSS is a fun experience." />
+  <meta property="og:description" content="Writing my website in pure HTML and CSS is a fun experience." />
+  <meta property="og:image" content="https://namn.me/images/writing-how-did-i-build-my-website-og.png">
+  <meta property="og:url" content="https://namn.me/writing/how-did-i-build-my-website" />
+  <link rel="canonical" href="https://namn.me/writing/how-did-i-build-my-website" />
+</head>
+
+<body>
+  <!-- block-start: header -->
+  <header>
+    <span id="back-to-top" class="[ visually-hidden top-0 ]" aria-hidden="true"></span>
+    <nav class="[ navbar ] [ flow-x ]">
+      <a href="/" data-line="none" class="[ navbar__link ]">
+        <svg class="[ navbar__logo ] [ self-drawing ]" width="28" height="26" viewBox="0 0 28 26" fill="none"
+          aria-label="logo" role="img" xmlns="http://www.w3.org/2000/svg">
+          <path pathLength="1"
+            d="M5.04113 25.256C3.78246 25.256 2.77979 24.808 2.03313 23.912C1.30779 22.9947 0.945125 21.9493 0.945125 20.776C0.945125 19.6027 1.33979 18.5573 2.12913 17.64C2.93979 16.7013 3.89979 16.232 5.00913 16.232C5.47846 16.232 5.86246 16.3493 6.16113 16.584C6.48113 16.7973 6.64113 17.1173 6.64113 17.544C6.64113 18.3333 6.12913 18.728 5.10513 18.728C4.63579 18.728 4.23046 18.9307 3.88913 19.336C3.54779 19.72 3.37713 20.2107 3.37713 20.808C3.37713 21.384 3.53713 21.864 3.85713 22.248C4.17713 22.6107 4.62513 22.792 5.20113 22.792C7.18513 22.792 8.17712 19.72 8.17712 13.576C8.17712 11.8907 8.00646 9.68267 7.66513 6.952C7.32379 4.22133 7.15313 2.632 7.15313 2.184C7.15313 1.71467 7.30246 1.34133 7.60113 1.064C7.89979 0.786666 8.25179 0.647999 8.65713 0.647999C9.25446 0.647999 9.73446 1.02133 10.0971 1.768C11.2491 4.008 12.8918 7.00533 15.0251 10.76C17.1585 14.5147 19.0038 17.6293 20.5611 20.104C20.4758 20.104 20.3691 18.6213 20.2411 15.656C20.1345 12.6693 20.0811 10.7067 20.0811 9.768C20.0811 7.4 20.3158 5.384 20.7851 3.72C21.0625 2.76 21.5105 2.01333 22.1291 1.48C22.7691 0.925332 23.4945 0.647999 24.3051 0.647999C25.1371 0.647999 25.8411 0.871999 26.4171 1.32C26.9931 1.74667 27.2811 2.248 27.2811 2.824C27.2811 3.4 27.0358 3.688 26.5451 3.688C26.3958 3.688 26.0865 3.592 25.6171 3.4C25.1478 3.208 24.7318 3.112 24.3691 3.112C23.0251 3.112 22.3531 6.19467 22.3531 12.36C22.3531 13.8107 22.4705 16.0293 22.7051 19.016C22.9398 22.0027 23.0571 23.6667 23.0571 24.008C23.0571 24.3493 22.9078 24.6587 22.6091 24.936C22.3318 25.2133 22.0011 25.352 21.6171 25.352C21.0411 25.352 20.5398 24.9787 20.1131 24.232C19.0465 22.3333 17.8305 20.2107 16.4651 17.864L12.4011 10.6C11.2278 8.424 10.4171 6.99467 9.96913 6.312C10.2678 9.128 10.4171 11.8053 10.4171 14.344C10.4171 21.6187 8.62513 25.256 5.04113 25.256Z" />
+        </svg>
+      </a>
+      <a href="/" class="[ navbar__link ]">Home</a>
+      <a href="/projects" class="[ navbar__link ]">Projects</a>
+      <a href="/writing" class="[ navbar__link ]">Writing</a>
+      <a href="https://github.com/namvnn" class="[ navbar__link ]" target="_blank">Code</a>
+    </nav>
+  </header>
+  <!-- block-end: header -->
+
+  <main class="[ writing ]">
+    <h1>How Did I Build My Website?</h1>
+    <p class="[ -mt-4 color-mono-06 ]">Published on March 25, 2025. Last updated on December 28, 2025.</p>
+
+    <ul id="toc" class="[ toc ]">
+      <li><a href="#motivation" id="toc-motivation">Motivation</a></li>
+      <li><a href="#tech-stack" id="toc-tech-stack">Tech stack</a></li>
+      <li><a href="#styling" id="toc-styling">Styling</a>
+        <ul>
+          <li><a href="#css-methodology" id="toc-css-methodology">CSS methodology</a></li>
+          <li><a href="#css-reset" id="toc-css-reset">CSS Reset</a></li>
+          <li><a href="#code-syntax-highlighting" id="toc-code-syntax-highlighting">Code syntax highlighting</a></li>
+        </ul>
+      </li>
+      <li><a href="#content" id="toc-content">Content</a>
+        <ul>
+          <li>
+            <a href="#how-is-page-content-managed" id="toc-how-is-page-content-managed">
+              How is page content managed?
+            </a>
+          </li>
+          <li>
+            <a href="#how-is-a-writing-like-this-created" id="toc-how-is-a-writing-like-this-created">
+              How is a writing like this created?
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <a href="#interesting-points-during-development" id="toc-interesting-points-during-development">
+          Interesting points during development
+        </a>
+      </li>
+    </ul>
+
+    <article>
+      <h2 id="motivation">
+        <a href="#motivation">Motivation</a>
+      </h2>
+      <p>In the past, I built some portfolios to mainly showcase my small projects
+        when I was learning programming and job hunting. These portfolios were unnecessarily
+        complex, as they were built with <a href="https://react.dev" target="_blank">React.js</a> or <a
+          href="https://nextjs.org" target="_blank">Next.js</a>. After landing
+        my first programming job, I neglected the portfolio, neither updating it nor
+        writing any blog posts. At the beginning of 2025, I decided to make a “fresh start”
+        by rebuilding my website with a simpler UI and without any JavaScript front-end
+        frameworks or libraries.</p>
+      <p>As I have grown in my programming career, I have become more interested in
+        understanding how technologies work under the hood and sharing my thoughts on
+        topics that intrigue me. This new website will become a space for exploration,
+        experiment and writing.</p>
+      <p>The source code of my new website can be found at <a href="https://github.com/namvnn/namn"
+          target="_blank">namvnn/namn</a>.</p>
+      <!-- block-start: back-to-top -->
+      <p class="[ color-mono-07 ]"><a href="#back-to-top">&#8593; Back to top</a></p>
+      <!-- block-end: back-to-top -->
+
+      <h2 id="tech-stack">
+        <a href="#tech-stack">Tech stack</a>
+      </h2>
+      <p>Here are the major technologies I have used to build my website:</p>
+      <ul>
+        <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank">HTML</a> defines the website's
+          structure and content.</li>
+        <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank">CSS</a> specifies the website's
+          styling.</li>
+        <li><a href="https://www.gnu.org/software/bash" target="_blank">GNU Bash</a> defines scripts for building
+          the website, deploying the website and updating repeated HTML blocks across pages.</li>
+        <li><a href="https://www.gnu.org/software/make" target="_blank">GNU Make</a> defines custom commands and
+          automates repeated tasks such as running a development server, building the website,
+          deploying the website, and cleaning up.</li>
+        <li><a href="https://www.gnu.org/software/sed" target="_blank">GNU sed</a> updates repeated HTML blocks.</li>
+        <li><a href="https://pandoc.org" target="_blank">Pandoc</a> converts Markdown to HTML.</li>
+        <li><a href="https://pages.github.com" target="_blank">GitHub Pages</a> hosts the website.</li>
+      </ul>
+      <!-- block-start: back-to-top -->
+      <p class="[ color-mono-07 ]"><a href="#back-to-top">&#8593; Back to top</a></p>
+      <!-- block-end: back-to-top -->
+
+      <h2 id="styling">
+        <a href="#styling">Styling</a>
+      </h2>
+      <p>I have been using only pure CSS to style my website.</p>
+
+      <h3 id="css-methodology">
+        <a href="#css-methodology">CSS methodology</a>
+      </h3>
+      <p>There are many CSS methodologies to architect, manage and maintain a website's
+        styling, such as BEM, OOCSS, SMACSS, Atomic CSS, ITCSS or CUBE CSS. Eventually,
+        I chose <a href="https://cube.fyi" target="_blank">CUBE CSS</a>. CUBE stands for Composition Utility Block
+        Exception, and obviously, CSS stands for Cascading Style Sheets. I knew this
+        methodology thanks to Kevin Powell's
+        amazing video, <a href="https://youtu.be/NanhQvnvbR8" target="_blank">A look at the CUBE CSS methodology
+          in action</a>.
+      </p>
+      <p>The reason why I chose CUBE CSS is because its website mentions:</p>
+      <ul>
+        <li><em>“CUBE CSS is a CSS methodology that's orientated towards simplicity,
+            pragmatism and consistency.”</em></li>
+        <li><em>“This differs somewhat to other popular methodologies like BEM, which are
+            very good in their own right, but also run against the grain of CSS.”</em></li>
+      </ul>
+      <p>Those made me want to explore and experiment it.</p>
+      <p>It turns out that using CUBE CSS has been a fun experience, even though I
+        initially had a hard time to understand what Block is and when Block should be
+        used.</p>
+      <p>I am not entirely confident that I am applying CUBE CSS correctly, but at least
+        I find it fun to work with.</p>
+      <!-- block-start: back-to-top -->
+      <p class="[ color-mono-07 ]"><a href="#back-to-top">&#8593; Back to top</a></p>
+      <!-- block-end: back-to-top -->
+
+      <h3 id="css-reset">
+        <a href="#css-reset">CSS Reset</a>
+      </h3>
+      <p>I referenced Josh Comeau's <a href="https://www.joshwcomeau.com/css/custom-css-reset" target="_blank">CSS
+          Reset</a>.
+        His CSS reset is solid, simple, and sufficient in most cases. If you get a
+        chance, I highly recommend checking it out. He explains it in great detail.</p>
+      <!-- block-start: back-to-top -->
+      <p class="[ color-mono-07 ]"><a href="#back-to-top">&#8593; Back to top</a></p>
+      <!-- block-end: back-to-top -->
+
+      <h3 id="code-syntax-highlighting">
+        <a href="#code-syntax-highlighting">Code syntax highlighting</a>
+      </h3>
+      <p>I copied Pandoc's <a href="https://pandoc.org/demos.html#:~:text=Syntax%20highlighting%20of%20delimited%20code%20blocks%3A">code syntax highlighting style</a>, then adjusted it to align with my preferences. My tweaked version of code syntax highlighting in CSS is available at <a href="https://github.com/namvnn/namn/blob/main/src/styles/code.css">styles/code.css</a>. It supports both light and dark mode.</p>
+      <p>For example:</p>
+
+<div class="[ codeblock ] [ tab ]">
+<label class="[ tab__name ]">main.c</label>
+<pre class="[ tab__panel ]"><code><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="[ pp ]">#include </span><span class="[ im ]">&lt;stdio.h&gt;</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="[ dt ]">int</span> main<span class="[ op ]">(</span><span class="[ dt ]">void</span><span class="[ op ]">)</span> <span class="[ op ]">{</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  printf<span class="[ op ]">(</span><span class="[ st ]">&quot;Hello world!&quot;</span><span class="[ op ]">);</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="[ op ]">}</span></span></code></pre>
+</div>
+
+<div class="[ codeblock ] [ tab ]">
+<label class="[ tab__name ]">main.js</label>
+<pre class="[ tab__panel ]"><code><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="[ kw ]">const</span> express <span class="[ op ]">=</span> <span class="[ pp ]">require</span>(<span class="[ st ]">&#39;express&#39;</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="[ kw ]">const</span> app <span class="[ op ]">=</span> <span class="[ fu ]">express</span>()</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="[ kw ]">const</span> port <span class="[ op ]">=</span> <span class="[ dv ]">3000</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>app<span class="[ op ]">.</span><span class="[ fu ]">get</span>(<span class="[ st ]">&#39;/&#39;</span><span class="[ op ]">,</span> (req<span class="[ op ]">,</span> res) <span class="[ kw ]">=&gt;</span> {</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  res<span class="[ op ]">.</span><span class="[ fu ]">send</span>(<span class="[ st ]">&#39;Hello World!&#39;</span>)</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>app<span class="[ op ]">.</span><span class="[ fu ]">listen</span>(port<span class="[ op ]">,</span> () <span class="[ kw ]">=&gt;</span> {</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>  <span class="[ bu ]">console</span><span class="[ op ]">.</span><span class="[ fu ]">log</span>(<span class="[ vs ]">`Example app listening on port </span><span class="[ sc ]">${</span>port<span class="[ sc ]">}</span><span class="[ vs ]">`</span>)</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>})</span></code></pre>
+</div>
+      <!-- block-start: back-to-top -->
+      <p class="[ color-mono-07 ]"><a href="#back-to-top">&#8593; Back to top</a></p>
+      <!-- block-end: back-to-top -->
+
+      <h2 id="content">
+        <a href="#content">Content</a>
+      </h2>
+
+      <h3 id="how-is-page-content-managed">
+        <a href="#how-is-page-content-managed">How is page content managed?</a>
+      </h3>
+      <p>I have been using HTML directly to create and update pages. However, there is
+        a slight exception when creating a writing page, which will be explained in
+        more detail in the below section <a href="#how-is-a-writing-like-this-created">How is a writing like this
+          created?</a>.</p>
+      <p>Writing pages in HTML directly introduces one issue. Some areas in all pages
+        are identical such as navigation bar and footer. If the number of pages grows
+        into the hundreds (due to the number of writing pages), keeping these areas
+        consistent and updated in all pages becomes a daunting and time-consuming task.
+        Therefore, I created <code>Block</code> built on top of <a href="https://www.gnu.org/software/sed"
+          target="_blank">GNU sed</a>
+        to solve this issue. A block is similar to a component in popular front-end
+        frameworks/libraries. It is a reusable group of HTML elements.</p>
+      <p><code>Block</code> declaration syntax:</p>
+
+<div class="[ codeblock ] [ tab ]">
+<label class="[ tab__name ]">block</label>
+<pre class="[ tab__panel ]"><code><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="[ co ]">&lt;!-- block-start: block-name --&gt;</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="[ co ]">&lt;!-- block-end: block-name --&gt;</span></span></code></pre>
+</div>
+
+      <p>Let's see <code>Block</code> in action with the example below.</p>
+      <ol type="1">
+        <li>Create files as the following tree.</li>
+      </ol>
+
+<div class="[ codeblock ] [ tab ]">
+<label class="[ tab__name ]">files</label>
+<pre class="[ tab__panel ]"><code>scripts/
+└── block.sh
+src/
+├── blocks/
+│   └── header.html
+├── home.html
+├── index.html
+└── projects.html</code></pre>
+</div>
+
+      <ol start="2" type="1">
+        <li>Define the <code>header</code> block. Note that while the
+          indentation is expected to be formatted properly when the <code>header</code> block is
+          placed in HTML page files, indentation does not matter in my case as I do not
+          preserve it.</li>
+      </ol>
+
+<div class="[ codeblock ] [ tab ]">
+<label class="[ tab__name ]">src/blocks/header.html</label>
+<pre class="[ tab__panel ]"><code><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>    <span class="[ dt ]">&lt;</span><span class="[ kw ]">header</span><span class="[ dt ]">&gt;</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>      <span class="[ dt ]">&lt;</span><span class="[ kw ]">nav</span><span class="[ dt ]">&gt;</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>        <span class="[ dt ]">&lt;</span><span class="[ kw ]">a</span><span class="[ ot ]"> href</span><span class="[ op ]">=</span><span class="[ st ]">&quot;/home.html&quot;</span><span class="[ dt ]">&gt;</span>Home<span class="[ dt ]">&lt;/</span><span class="[ kw ]">a</span><span class="[ dt ]">&gt;</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>        <span class="[ dt ]">&lt;</span><span class="[ kw ]">a</span><span class="[ ot ]"> href</span><span class="[ op ]">=</span><span class="[ st ]">&quot;/projects.html&quot;</span><span class="[ dt ]">&gt;</span>Projects<span class="[ dt ]">&lt;/</span><span class="[ kw ]">a</span><span class="[ dt ]">&gt;</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>      <span class="[ dt ]">&lt;/</span><span class="[ kw ]">nav</span><span class="[ dt ]">&gt;</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    <span class="[ dt ]">&lt;/</span><span class="[ kw ]">header</span><span class="[ dt ]">&gt;</span></span></code></pre>
+</div>
+
+      <ol start="3" type="1">
+        <li>Define the Home page with <code>header</code>'s start and end block tag.</li>
+      </ol>
+
+<div class="[ codeblock ] [ tab ]">
+<label class="[ tab__name ]">src/home.html</label>
+<pre class="[ tab__panel ]"><code><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="[ dt ]">&lt;!DOCTYPE</span> html<span class="[ dt ]">&gt;</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="[ dt ]">&lt;</span><span class="[ kw ]">html</span><span class="[ ot ]"> lang</span><span class="[ op ]">=</span><span class="[ st ]">&quot;en&quot;</span><span class="[ dt ]">&gt;</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="[ dt ]">&lt;</span><span class="[ kw ]">head</span><span class="[ dt ]">&gt;</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="[ dt ]">&lt;</span><span class="[ kw ]">title</span><span class="[ dt ]">&gt;</span>Home<span class="[ dt ]">&lt;/</span><span class="[ kw ]">title</span><span class="[ dt ]">&gt;</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>  <span class="[ dt ]">&lt;/</span><span class="[ kw ]">head</span><span class="[ dt ]">&gt;</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>  <span class="[ dt ]">&lt;</span><span class="[ kw ]">body</span><span class="[ dt ]">&gt;</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>    <span class="[ co ]">&lt;!-- block-start: header --&gt;</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>    <span class="[ co ]">&lt;!-- block-end: header --&gt;</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>  <span class="[ dt ]">&lt;/</span><span class="[ kw ]">body</span><span class="[ dt ]">&gt;</span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="[ dt ]">&lt;/</span><span class="[ kw ]">html</span><span class="[ dt ]">&gt;</span></span></code></pre>
+</div>
+
+      <ol start="4" type="1">
+        <li>Define the Projects page with <code>header</code>'s start and end block tag.</li>
+      </ol>
+
+<div class="[ codeblock ] [ tab ]">
+<label class="[ tab__name ]">src/projects.html</label>
+<pre class="[ tab__panel ]"><code><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="[ dt ]">&lt;!DOCTYPE</span> html<span class="[ dt ]">&gt;</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="[ dt ]">&lt;</span><span class="[ kw ]">html</span><span class="[ ot ]"> lang</span><span class="[ op ]">=</span><span class="[ st ]">&quot;en&quot;</span><span class="[ dt ]">&gt;</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="[ dt ]">&lt;</span><span class="[ kw ]">head</span><span class="[ dt ]">&gt;</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="[ dt ]">&lt;</span><span class="[ kw ]">title</span><span class="[ dt ]">&gt;</span>Projects<span class="[ dt ]">&lt;/</span><span class="[ kw ]">title</span><span class="[ dt ]">&gt;</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>  <span class="[ dt ]">&lt;/</span><span class="[ kw ]">head</span><span class="[ dt ]">&gt;</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>  <span class="[ dt ]">&lt;</span><span class="[ kw ]">body</span><span class="[ dt ]">&gt;</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>    <span class="[ co ]">&lt;!-- block-start: header --&gt;</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>    <span class="[ co ]">&lt;!-- block-end: header --&gt;</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>  <span class="[ dt ]">&lt;/</span><span class="[ kw ]">body</span><span class="[ dt ]">&gt;</span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a><span class="[ dt ]">&lt;/</span><span class="[ kw ]">html</span><span class="[ dt ]">&gt;</span></span></code></pre>
+</div>
+
+      <ol start="5" type="1">
+        <li>Run <code>scripts/block.sh</code> with the block name (i.e. <code>header</code>). The script can be found in
+          <a href="https://github.com/namvnn/namn/blob/main/scripts/block.sh" target="_blank">scripts/block.sh</a>.
+        </li>
+      </ol>
+
+<div class="[ codeblock ] [ tab ]">
+<label class="[ tab__name ]">shell</label>
+<pre class="[ tab__panel ]"><code><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="[ ex ]">./scripts/block.sh</span> header</span></code></pre>
+</div>
+
+      <ol start="6" type="1">
+        <li>As a result, the Home page and the Projects page are updated as follows.</li>
+      </ol>
+
+<div class="[ codeblock ] [ tab ]">
+<label class="[ tab__name ]">src/home.html</label>
+<pre class="[ tab__panel ]"><code><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="[ dt ]">&lt;!DOCTYPE</span> html<span class="[ dt ]">&gt;</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="[ dt ]">&lt;</span><span class="[ kw ]">html</span><span class="[ ot ]"> lang</span><span class="[ op ]">=</span><span class="[ st ]">&quot;en&quot;</span><span class="[ dt ]">&gt;</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="[ dt ]">&lt;</span><span class="[ kw ]">head</span><span class="[ dt ]">&gt;</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  <span class="[ dt ]">&lt;</span><span class="[ kw ]">title</span><span class="[ dt ]">&gt;</span>Home<span class="[ dt ]">&lt;/</span><span class="[ kw ]">title</span><span class="[ dt ]">&gt;</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>  <span class="[ dt ]">&lt;/</span><span class="[ kw ]">head</span><span class="[ dt ]">&gt;</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>  <span class="[ dt ]">&lt;</span><span class="[ kw ]">body</span><span class="[ dt ]">&gt;</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>    <span class="[ co ]">&lt;!-- block-start: header --&gt;</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>    <span class="[ dt ]">&lt;</span><span class="[ kw ]">header</span><span class="[ dt ]">&gt;</span></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>      <span class="[ dt ]">&lt;</span><span class="[ kw ]">nav</span><span class="[ dt ]">&gt;</span></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>        <span class="[ dt ]">&lt;</span><span class="[ kw ]">a</span><span class="[ ot ]"> href</span><span class="[ op ]">=</span><span class="[ st ]">&quot;/home.html&quot;</span><span class="[ dt ]">&gt;</span>Home<span class="[ dt ]">&lt;/</span><span class="[ kw ]">a</span><span class="[ dt ]">&gt;</span></span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>        <span class="[ dt ]">&lt;</span><span class="[ kw ]">a</span><span class="[ ot ]"> href</span><span class="[ op ]">=</span><span class="[ st ]">&quot;/projects.html&quot;</span><span class="[ dt ]">&gt;</span>Projects<span class="[ dt ]">&lt;/</span><span class="[ kw ]">a</span><span class="[ dt ]">&gt;</span></span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>      <span class="[ dt ]">&lt;/</span><span class="[ kw ]">nav</span><span class="[ dt ]">&gt;</span></span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>    <span class="[ dt ]">&lt;/</span><span class="[ kw ]">header</span><span class="[ dt ]">&gt;</span></span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>    <span class="[ co ]">&lt;!-- block-end: header --&gt;</span></span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>  <span class="[ dt ]">&lt;/</span><span class="[ kw ]">body</span><span class="[ dt ]">&gt;</span></span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a><span class="[ dt ]">&lt;/</span><span class="[ kw ]">html</span><span class="[ dt ]">&gt;</span></span></code></pre>
+</div>
+
+<div class="[ codeblock ] [ tab ]">
+<label class="[ tab__name ]">src/projects.html</label>
+<pre class="[ tab__panel ]"><code><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="[ dt ]">&lt;!DOCTYPE</span> html<span class="[ dt ]">&gt;</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="[ dt ]">&lt;</span><span class="[ kw ]">html</span><span class="[ ot ]"> lang</span><span class="[ op ]">=</span><span class="[ st ]">&quot;en&quot;</span><span class="[ dt ]">&gt;</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="[ dt ]">&lt;</span><span class="[ kw ]">head</span><span class="[ dt ]">&gt;</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>  <span class="[ dt ]">&lt;</span><span class="[ kw ]">title</span><span class="[ dt ]">&gt;</span>Projects<span class="[ dt ]">&lt;/</span><span class="[ kw ]">title</span><span class="[ dt ]">&gt;</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>  <span class="[ dt ]">&lt;/</span><span class="[ kw ]">head</span><span class="[ dt ]">&gt;</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>  <span class="[ dt ]">&lt;</span><span class="[ kw ]">body</span><span class="[ dt ]">&gt;</span></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>    <span class="[ co ]">&lt;!-- block-start: header --&gt;</span></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>    <span class="[ dt ]">&lt;</span><span class="[ kw ]">header</span><span class="[ dt ]">&gt;</span></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>      <span class="[ dt ]">&lt;</span><span class="[ kw ]">nav</span><span class="[ dt ]">&gt;</span></span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>        <span class="[ dt ]">&lt;</span><span class="[ kw ]">a</span><span class="[ ot ]"> href</span><span class="[ op ]">=</span><span class="[ st ]">&quot;/home.html&quot;</span><span class="[ dt ]">&gt;</span>Home<span class="[ dt ]">&lt;/</span><span class="[ kw ]">a</span><span class="[ dt ]">&gt;</span></span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>        <span class="[ dt ]">&lt;</span><span class="[ kw ]">a</span><span class="[ ot ]"> href</span><span class="[ op ]">=</span><span class="[ st ]">&quot;/projects.html&quot;</span><span class="[ dt ]">&gt;</span>Projects<span class="[ dt ]">&lt;/</span><span class="[ kw ]">a</span><span class="[ dt ]">&gt;</span></span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>      <span class="[ dt ]">&lt;/</span><span class="[ kw ]">nav</span><span class="[ dt ]">&gt;</span></span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>    <span class="[ dt ]">&lt;/</span><span class="[ kw ]">header</span><span class="[ dt ]">&gt;</span></span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a>    <span class="[ co ]">&lt;!-- block-end: header --&gt;</span></span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a>  <span class="[ dt ]">&lt;/</span><span class="[ kw ]">body</span><span class="[ dt ]">&gt;</span></span>
+<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a><span class="[ dt ]">&lt;/</span><span class="[ kw ]">html</span><span class="[ dt ]">&gt;</span></span></code></pre>
+</div>
+
+      <ol start="7" type="1">
+        <li>Whenever <code>src/blocks/header.html</code> is updated, simply run the script in the
+          step 5 to update the <code>header</code> block across all pages.</li>
+      </ol>
+      <!-- block-start: back-to-top -->
+      <p class="[ color-mono-07 ]"><a href="#back-to-top">&#8593; Back to top</a></p>
+      <!-- block-end: back-to-top -->
+
+      <h3 id="how-is-a-writing-like-this-created">
+        <a href="#how-is-a-writing-like-this-created">How is a writing like this created?</a>
+      </h3>
+      <p>A writing is created through the following steps:</p>
+      <ol type="1">
+        <li>Create a Markdown file, e.g. <code>writing.md</code>.</li>
+        <li>Compose content in <code>writing.md</code>.</li>
+        <li>Run the following Pandoc command to convert Markdown to HTML, i.e.
+          <code>writing.md</code> to <code>writing.html</code>.
+        </li>
+      </ol>
+
+<div class="[ codeblock ] [ tab ]">
+<label class="[ tab__name ]">shell</label>
+<pre class="[ tab__panel ]"><code><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="[ ex ]">pandoc</span> writing.md <span class="[ dt ]">\</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>       <span class="[ at ]">--toc</span> <span class="[ dt ]">\</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>       <span class="[ at ]">--standalone</span> <span class="[ dt ]">\</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>       <span class="[ at ]">--wrap</span><span class="[ op ]">=</span>preserve <span class="[ dt ]">\</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>       <span class="[ at ]">--highlight-style</span><span class="[ op ]">=</span>kate <span class="[ dt ]">\</span></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>       <span class="[ at ]">--output</span><span class="[ op ]">=</span>writing.html</span></code></pre>
+</div>
+
+      <ol start="4" type="1">
+        <li>Copy content line by line from <code>writing.html</code> to the actual HTML page,
+          making adjustments to align with my website's styling.</li>
+      </ol>
+      <p>As you can see, writing pages are first written in Markdown and then converted
+        to HTML. This is the only exception to not using HTML directly to create pages,
+        which is mentioned in the section <a href="#how-is-page-content-managed">How is page content managed?</a>.</p>
+      <!-- block-start: back-to-top -->
+      <p class="[ color-mono-07 ]"><a href="#back-to-top">&#8593; Back to top</a></p>
+      <!-- block-end: back-to-top -->
+
+      <h2 id="interesting-points-during-development">
+        <a href="#interesting-points-during-development">Interesting points during development</a>
+      </h2>
+      <ul>
+        <li><a href="https://www.gnu.org/software/sed" target="_blank">GNU sed</a> is basically similar to Vim, but
+          non-interactive. It can perform basic text editing operations of an interactive
+          text editor.</li>
+        <li>The more I work with Bash, the more I realize that it is extremely powerful.</li>
+        <li>Pandoc is extremely powerful. I highly recommend checking out <a href="https://pandoc.org"
+            target="_blank">Pandoc
+            website</a>
+          to behold its “God ability in file format conversion”. By the way, it is
+          written in <a href="https://www.haskell.org" target="_blank">Haskell</a>.</li>
+        <li>Living without JavaScript is happy.</li>
+        <li>Writing pure CSS is fun.</li>
+        <li>Writing pure HTML is fun.</li>
+      </ul>
+      <!-- block-start: back-to-top -->
+      <p class="[ color-mono-07 ]"><a href="#back-to-top">&#8593; Back to top</a></p>
+      <!-- block-end: back-to-top -->
+    </article>
+
+    <!-- block-start: cheers -->
+    <p>
+      Cheers,<br>
+      Nam Nguyen
+    </p>
+    <!-- block-end: cheers -->
+
+    <!-- block-start: back-to-writing -->
+    <p><a class="[ color-mono-07 ]" href="/writing">$ cd ~/writing</a></p>
+    <!-- block-end: back-to-writing -->
+  </main>
+
+  <!-- block-start: footer -->
+  <footer>
+    <p>Always remember to love yourself. ٩( ᐛ )و</p>
+    <div class="[ flow-x ] [ mt-2 ]">
+      <a href="#back-to-top">Top</a>
+      <a href="/writing/bookmarks">Bookmarks</a>
+      <a href="/404">404</a>
+    </div>
+  </footer>
+  <!-- block-end: footer -->
+</body>
+
+</html>
