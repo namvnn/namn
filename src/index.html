@@ -24,11 +24,6 @@
   <link rel="canonical" href="https://namn.me" />
 
   <style>
-    .brief-lists {
-      --grid-column-min-width: calc(var(--spacing) * 70);
-      --grid-gap: calc(var(--spacing) * 10);
-    }
-
     .connect tr td:first-child {
       vertical-align: top;
     }
@@ -75,70 +70,37 @@
       </table>
     </section>
 
-    <div class="[ brief-lists ] [ grid ]">
+    <div class="[ grid ]" style="--grid-column-min-width: calc(var(--spacing) * 70); --grid-gap: calc(var(--spacing) * 10)">
       <section>
         <h2>Projects</h2>
-
-        <div class="[ brief-list ] [ grid ]">
-          <article class="[ brief ]">
-            <h3 class="[ brief__title ]">
-              <a class="[ brief__link ]" href="https://github.com/namvnn/namn" target="_blank">
-                My website
-              </a>
-            </h3>
-            <p class="[ brief__description ] [ line-clamp-3 ]">
-              My digital garden.
-            </p>
-            <p class="[ brief__chips ] [ flow-x ]">
-              <span class="[ brief__chip ]">HTML</span>
-              <span class="[ brief__chip ]">CSS</span>
-            </p>
-          </article>
-
-          <article class="[ brief ]">
-            <h3 class="[ brief__title ]">
-              <a class="[ brief__link ]" href="https://github.com/namvnn/mini-c" target="_blank">Mini C</a>
-            </h3>
-            <p class="[ brief__description ] [ line-clamp-3 ]">
-              Mini Projects in C.
-            </p>
-            <p class="[ brief__chips ] [ flow-x ]">
-              <span class="[ brief__chip ]">C</span>
-              <span class="[ brief__chip ]">ncurses</span>
-            </p>
-          </article>
-
-          <article class="[ brief ]">
-            <h3 class="[ brief__title ]">
-              <a class="[ brief__link ]" href="/projects">All projects</a>
-            </h3>
-            <p class="[ brief__description ]">My creations.</p>
-          </article>
-        </div>
+        <ul class="[ flow-y ] [ pl-3 ]">
+          <li>
+            <a href="https://github.com/namvnn/namn" target="_blank">My website</a><br/>
+            <small>My digital garden</small>
+          </li>
+          <li>
+            <a href="https://github.com/namvnn/mini-c" target="_blank">Mini C</a><br/>
+            <small>Mini Projects in C</small>
+          </li>
+          <li>
+            <a href="/projects">All projects</a><br/>
+            <small>My creations</small>
+          </li>
+        </ul>
       </section>
 
       <section>
         <h2>Writing</h2>
-
-        <div class="[ brief-list ] [ grid ]">
-          <article class="[ brief ]">
-            <h3 class="[ brief__title ]">
-              <a class="[ brief__link ]" href="/writing/how-did-i-build-my-website">
-                How Did I Build My Website?
-              </a>
-            </h3>
-            <p class="[ brief__description ] [ line-clamp-3 ]">
-              Build my digital garden.
-            </p>
-          </article>
-
-          <article class="[ brief ]">
-            <h3 class="[ brief__title ]">
-              <a class="[ brief__link ]" href="/writing">All writing</a>
-            </h3>
-            <p class="[ brief__description ]">My thoughts on my interests.</p>
-          </article>
-        </div>
+        <ul class="[ flow-y ] [ pl-3 ]">
+          <li>
+            <a href="/writing/how-did-i-build-my-website">How Did I Build My Website?</a><br/>
+            <small>Build my digital garden</small>
+          </li>
+          <li>
+            <a href="/writing">All writing</a><br/>
+            <small>My thoughts on my interests</small>
+          </li>
+        </ul>
       </section>
     </div>
   </main>

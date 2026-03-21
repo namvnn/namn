@@ -401,34 +401,6 @@ footer {
     text-shadow: var(--light, 0 0 20px #ffffff) var(--dark, 0 0 20px #ffffff);
 }
 
-.brief-list {
-    --grid-column-min-width: calc(var(--spacing) * 40);
-    --grid-gap: calc(var(--spacing) * 6);
-}
-.brief > .brief__title {
-    display: inline-block;
-    color: var(--color-mono-10);
-}
-.brief > .brief__title > .brief__link {
-    display: flex;
-    align-items: center;
-}
-.brief > .brief__description {
-    color: var(--color-mono-08);
-}
-.brief > .brief__chips {
-    --flow-x-space: var(--spacing);
-    margin-top: calc(var(--spacing) * 2);
-}
-.brief > .brief__chips > .brief__chip {
-    font-size: var(--text-sm);
-    line-height: var(--text-sm--line-height);
-    color: var(--color-mono-08);
-    border: 1px solid var(--color-mono-04);
-    border-radius: var(--radius-xs);
-    padding: var(--spacing) calc(var(--spacing) * 1.5);
-}
-
 .tab {
     --tab-border-width: 1px;
     --tab-border: var(--tab-border-width) solid var(--color-mono-04);
