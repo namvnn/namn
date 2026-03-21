@@ -316,9 +316,9 @@ footer {
     color: var(--color-mono-07);
 }
 
-.text-xl {
-    font-size: var(--text-xl);
-    line-height: var(--text-xl--line-height);
+.text-lg {
+    font-size: var(--text-lg);
+    line-height: var(--text-lg--line-height);
 }
 
 .mt-2 {
