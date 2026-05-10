@@ -316,6 +316,10 @@ footer {
     color: var(--color-mono-07);
 }
 
+.text-sm {
+    font-size: var(--text-sm);
+    line-height: var(--text-sm--line-height);
+}
 .text-lg {
     font-size: var(--text-lg);
     line-height: var(--text-lg--line-height);
