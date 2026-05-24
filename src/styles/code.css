@@ -4,20 +4,14 @@
     --tab-name-font-size: var(--text-xs);
     --tab-name-line-height: var(--text-xs--line-height);
 
-    --tab-panel-font-size: var(--text-sm);
-    --tab-panel-line-height: var(--text-sm--line-height);
+    --tab-panel-font-size: var(--text-xs);
+    --tab-panel-line-height: var(--text-xs--line-height);
     --tab-panel-font-family: var(--font-mono);
     --tab-panel-overflow: auto;
 }
 
 * + .codeblock {
     --tab-top-spacing: calc(var(--spacing) * 4);
-}
-
-.codeblock code {
-    color: var(--tab-color);
-    font-weight: var(--font-weight-normal);
-    white-space: pre;
 }
 
 /* Line number

@@ -53,7 +53,7 @@
     --text-4xl--line-height: calc(2.5 / 2.25);
 
     --font-sans: system-ui, sans-serif;
-    --font-serif: Palatino, "Times New Roman", Times, serif;
+    --font-serif: "Times New Roman", Times, serif;
     --font-mono: monospace;
 
     --font-weight-extralight: 200;
@@ -207,6 +207,7 @@ h2 {
     line-height: var(--text-2xl--line-height);
     font-weight: var(--font-weight-bold);
     margin-bottom: calc(var(--spacing) * 6);
+    border-bottom: 1px solid var(--color-mono-04);
 }
 
 h3 {
@@ -214,6 +215,12 @@ h3 {
     line-height: var(--text-lg--line-height);
     font-weight: var(--font-weight-semibold);
     margin-bottom: calc(var(--spacing) * 4);
+    border-bottom: 1px solid var(--color-mono-04);
+}
+
+small {
+    font-size: var(--text-sm);
+    line-height: var(--text-sm--line-height);
 }
 
 a {
@@ -230,9 +237,6 @@ a {
     a:hover {
         text-decoration-style: solid;
     }
-}
-h1 a, h2 a, h3 a {
-    color: var(--color-fg);
 }
 a[data-line="none"] {
     -webkit-text-decoration: none;
@@ -258,6 +262,28 @@ a[href^="http"]::after {
 }
 a[href^="http"][data-anchor="none"]::after {
     display: none;
+}
+
+h1 a, h2 a, h3 a {
+    color: var(--color-fg);
+    text-decoration: none;
+}
+h1 a::before,
+h2 a::before,
+h3 a::before {
+    content: "#";
+    position: absolute;
+    opacity: 0;
+    transform: translate3d(calc(-100% - var(--spacing) * 1), 0, 0);
+    color: var(--color-mono-05);
+    transition-property: opacity;
+    transition-timing-function: ease;
+    transition-duration: var(--transition-duration-sm);
+}
+h1:hover a::before,
+h2:hover a::before,
+h3:hover a::before {
+    opacity: 1;
 }
 
 code:not(pre code) {
