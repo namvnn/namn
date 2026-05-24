@@ -192,10 +192,10 @@ body::before {
 
 main {
     min-height: calc(100vh
-        - 25px                    /* <header>'s height */
+        - 27px                    /* <header>'s height */
         - var(--spacing) * 8 * 2  /* <body>'s padding */
         - var(--spacing) * 16 * 2 /* <main>'s and <footer>'s padding */
-        - 76px                    /* <footer>'s height */
+        - 92px                    /* <footer>'s height */
     )
 }
 main > :nth-child(n + 3) {
