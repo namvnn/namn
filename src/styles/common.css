@@ -230,11 +230,6 @@ small {
     line-height: var(--text-sm--line-height);
 }
 
-article p,
-article li {
-    text-align: justify;
-}
-
 a {
     color: var(--color-purple);
     -webkit-text-decoration: inherit;
