@@ -222,8 +222,8 @@ small {
     line-height: var(--text-sm--line-height);
 }
 
-p,
-li {
+article p,
+article li {
     text-align: justify;
 }
 
