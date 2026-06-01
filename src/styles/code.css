@@ -1,11 +1,8 @@
 .codeblock {
     --tab-color: var(--light, #1f1c1b) var(--dark, #cfcfc2);
 
-    --tab-name-font-size: var(--text-xs);
-    --tab-name-line-height: var(--text-xs--line-height);
-
-    --tab-panel-font-size: var(--text-xs);
-    --tab-panel-line-height: var(--text-xs--line-height);
+    --tab-panel-font-size: var(--text-sm);
+    --tab-panel-line-height: var(--text-sm--line-height);
     --tab-panel-font-family: var(--font-mono);
     --tab-panel-overflow: auto;
 }
