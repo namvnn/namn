@@ -3,7 +3,7 @@ title: How Did I Build My Website?
 lang: en
 ...
 
-Published on March 25, 2025. Last updated on December 28, 2025.
+Published on March 25, 2025. Last updated on June 11, 2026.
 
 ## Motivation
 
@@ -274,7 +274,7 @@ As you can see, writing pages are first written in Markdown and then converted
 to HTML. This is the only exception to not using HTML directly to create pages,
 which is mentioned in the section [How is page content managed?](#how-is-page-content-managed).
 
-## Interesting points during development
+## Interesting points
 
 - [GNU sed](https://www.gnu.org/software/sed) is basically similar to Vim, but
 non-interactive. It can perform basic text editing operations of an interactive
