@@ -229,11 +229,6 @@ h3 {
     border-bottom: 1px solid var(--color-mono-04);
 }
 
-p,
-li {
-    text-align: justify;
-}
-
 small {
     font-size: var(--text-sm);
     line-height: var(--text-sm--line-height);
