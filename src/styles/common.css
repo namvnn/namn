@@ -347,10 +347,6 @@ footer {
 
 /* == UTILITY == */
 
-.font-mono {
-    font-family: var(--font-mono);
-}
-
 .color-mono-06 {
     color: var(--color-mono-06);
 }
