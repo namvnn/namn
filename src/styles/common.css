@@ -376,9 +376,6 @@ footer {
 .pl-2 {
     padding-left: calc(var(--spacing) * 2);
 }
-.pl-3 {
-    padding-left: calc(var(--spacing) * 3);
-}
 
 .top-0 {
     top: 0;
