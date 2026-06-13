@@ -354,11 +354,6 @@ footer {
     color: var(--color-mono-07);
 }
 
-.text-sm {
-    font-size: var(--text-sm);
-    line-height: var(--text-sm--line-height);
-}
-
 .mt-2 {
     margin-top: calc(var(--spacing) * 2);
 }
