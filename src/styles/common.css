@@ -301,8 +301,8 @@ code:not(pre code) {
     font-family: var(--font-mono);
     font-size: var(--text-xs);
     line-height: var(--text-xs--line-height);
-    color: var(--light, #7b6e0e) var(--dark, #f3ea6c);
-    background-color: var(--light, #fbfeda) var(--dark, #423200);
+    color: var(--light, #463e00) var(--dark, #f3ea6c);
+    background-color: var(--light, #f9ffbf) var(--dark, #423200);
     padding: calc(var(--spacing) * 0.25) calc(var(--spacing) * 0.5);
     border-radius: var(--radius-xs);
 }
