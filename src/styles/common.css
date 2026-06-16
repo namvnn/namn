@@ -412,8 +412,6 @@ footer {
 /* == BLOCK & EXCEPTION == */
 
 .navbar {
-    --flex-justify-content: center;
-    --flex-align-items: center;
     --flex-wrap: wrap;
 }
 .navbar > .navbar__logo {
