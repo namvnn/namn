@@ -374,6 +374,9 @@ footer {
     color: var(--color-mono-07);
 }
 
+.mt-0 {
+    margin-top: 0;
+}
 .mt-2 {
     margin-top: calc(var(--spacing) * 2);
 }
@@ -541,9 +544,13 @@ footer {
     }
 }
 
+.section-list {
+    --grid-column-min-width: calc(var(--spacing) * 70);
+    --grid-gap: calc(var(--spacing) * 10)
+}
+
 .list-none {
     --flow-y-spacing: calc(var(--spacing) * 4);
     list-style: none;
     padding-left: 0;
 }
-
