@@ -1,4 +1,12 @@
-/* CLASS ORDER: [ BLOCK ] [ COMPOSITION ] [ UTILITY ] */
+/*
+ * CLASS ORDER: [ BLOCK ] [ COMPOSITION ] [ UTILITY ]
+ *
+ * - BLOCK is a skeletal component or organisational structure.
+ * - COMPOSITION is to create flexible, component-agnostic LAYOUT systems that support as many
+ *   variants of content as possible.
+ * - UTILITY is a CSS class that does one job and does that one job well.
+ */
+
 
 :root {
     --ON: initial;
@@ -179,7 +187,7 @@ body {
 }
 
 body > :not(:first-child) {
-    margin-top: calc(var(--spacing) * 16);
+    margin-top: calc(var(--spacing) * 10);
 }
 
 body::before {
@@ -198,7 +206,7 @@ main {
     min-height: calc(100vh
         - 27px                    /* <header>'s height */
         - var(--spacing) * 8 * 2  /* <body>'s padding */
-        - var(--spacing) * 16 * 2 /* <main>'s and <footer>'s padding */
+        - var(--spacing) * 10 * 2 /* <main>'s and <footer>'s margin-top */
         - 92px                    /* <footer>'s height */
     )
 }
@@ -319,18 +327,18 @@ footer {
 
 /* == COMPOSITION == */
 
-.flow-x-2 > :not(:first-child) {
-    margin-left: calc(var(--spacing) * 2);
+.flow-x {
+    --flow-x-spacing: calc(var(--spacing) * 4);
 }
-.flow-x-4 > :not(:first-child) {
-    margin-left: calc(var(--spacing) * 4);
+.flow-x > :not(:first-child) {
+    margin-left: var(--flow-x-spacing);
 }
 
-.flow-y-4 > :not(:first-child) {
-    margin-top: calc(var(--spacing) * 4);
+.flow-y {
+    --flow-y-spacing: calc(var(--spacing) * 4);
 }
-.flow-y-10 > :not(:first-child) {
-    margin-top: calc(var(--spacing) * 10);
+.flow-y > :not(:first-child) {
+    margin-top: var(--flow-y-spacing);
 }
 
 .grid {
@@ -339,10 +347,22 @@ footer {
 
     display: grid;
     gap: var(--grid-gap);
-    grid-template-columns: repeat(
-    auto-fit,
-    minmax(min(100%, var(--grid-column-min-width)), 1fr)
-    );
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--grid-column-min-width)), 1fr));
+}
+
+.flex {
+    --flex-gap: calc(var(--spacing) * 2) calc(var(--spacing) * 4);
+    --flex-justify-content: normal;
+    --flex-align-items: normal;
+    --flex-direction: row;
+    --flex-wrap: nowrap;
+
+    display: flex;
+    gap: var(--flex-gap);
+    justify-content: var(--flex-justify-content);
+    align-items: var(--flex-align-items);
+    flex-direction: var(--flex-direction);
+    flex-wrap: var(--flex-wrap);
 }
 
 /* == UTILITY == */
@@ -358,9 +378,6 @@ footer {
     margin-top: calc(var(--spacing) * 2);
 }
 
-.pl-0 {
-    padding-left: 0;
-}
 .pl-2 {
     padding-left: calc(var(--spacing) * 2);
 }
@@ -378,34 +395,6 @@ footer {
     -webkit-box-orient: vertical;
 }
 
-.self-drawing {
-    --self-drawing-stroke-color: var(--color-fg);
-    --self-drawing-duration: 4s;
-    --self-drawing-direction: normal;
-    --self-drawing-iteration-count: 1;
-    --self-drawing-fill-mode: forwards;
-    --self-drawing-timing-function: linear;
-}
-.self-drawing path {
-    stroke-dasharray: 1;
-    stroke-dashoffset: 1;
-    stroke: var(--self-drawing-stroke-color);
-    animation-name: self-drawing;
-    animation-duration: var(--self-drawing-duration);
-    animation-direction: var(--self-drawing-direction);
-    animation-iteration-count: var(--self-drawing-iteration-count);
-    animation-fill-mode: var(--self-drawing-fill-mode);
-    animation-timing-function: var(--self-drawing-timing-function);
-}
-@keyframes self-drawing {
-    from {
-        stroke-dashoffset: 1;
-    }
-    to {
-        stroke-dashoffset: 0;
-    }
-}
-
 .visually-hidden {
     clip: rect(0 0 0 0);
     clip-path: inset(50%);
@@ -416,20 +405,27 @@ footer {
     width: 1px;
 }
 
-.list-none {
-    list-style: none;
+.text-center {
+    text-align: center;
 }
 
 /* == BLOCK & EXCEPTION == */
 
-.navbar__logo {
-    --self-drawing-stroke-color: var(--color-purple);
-
+.navbar {
+    --flex-justify-content: center;
+    --flex-align-items: center;
+    --flex-wrap: wrap;
+}
+.navbar > .navbar__logo {
     display: inline-block;
     vertical-align: middle;
 }
-.navbar__link {
+.navbar > .navbar__link {
     text-shadow: var(--light, 0 0 20px #ffffff) var(--dark, 0 0 20px #ffffff);
+}
+
+.page-content {
+    --flow-y-spacing: calc(var(--spacing) * 10);
 }
 
 .tab {
@@ -518,3 +514,38 @@ footer {
 .tab > input[name="tab-name"] + .tab__name {
     cursor: pointer;
 }
+
+.self-drawing {
+    --self-drawing-stroke-color: var(--color-fg);
+    --self-drawing-duration: 4s;
+    --self-drawing-direction: normal;
+    --self-drawing-iteration-count: 1;
+    --self-drawing-fill-mode: forwards;
+    --self-drawing-timing-function: linear;
+}
+.self-drawing path {
+    stroke-dasharray: 1;
+    stroke-dashoffset: 1;
+    stroke: var(--self-drawing-stroke-color);
+    animation-name: self-drawing;
+    animation-duration: var(--self-drawing-duration);
+    animation-direction: var(--self-drawing-direction);
+    animation-iteration-count: var(--self-drawing-iteration-count);
+    animation-fill-mode: var(--self-drawing-fill-mode);
+    animation-timing-function: var(--self-drawing-timing-function);
+}
+@keyframes self-drawing {
+    from {
+        stroke-dashoffset: 1;
+    }
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+.list-none {
+    --flow-y-spacing: calc(var(--spacing) * 4);
+    list-style: none;
+    padding-left: 0;
+}
+
