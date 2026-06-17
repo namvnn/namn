@@ -244,22 +244,16 @@ small {
 
 a {
     color: var(--color-purple);
-    -webkit-text-decoration: inherit;
-    text-decoration: inherit;
-    text-decoration-line: underline;
-    text-decoration-color: var(--color-purple);
-    text-decoration-style: dotted;
-    text-decoration-thickness: calc(var(--spacing) * 0.35);
-    text-underline-offset: var(--spacing);
+    text-decoration: none;
 }
 @media (hover: hover) {
     a:hover {
+        text-decoration-line: underline;
+        text-decoration-color: var(--color-purple);
         text-decoration-style: solid;
+        text-decoration-thickness: calc(var(--spacing) * 0.5);
+        text-underline-offset: calc(var(--spacing) * 1.25);
     }
-}
-a[data-line="none"] {
-    -webkit-text-decoration: none;
-    text-decoration: none;
 }
 a[href^="http"]::after {
     --anchor-icon-color: var(--color-purple);
