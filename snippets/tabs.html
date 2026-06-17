@@ -17,16 +17,11 @@
 
 <!-- SourceCode Tabs -->
 <form class="[ codeblock ] [ tab ]">
-<input id="A" type="radio" name="tab-name" checked="checked" />
-<label for="A" class="[ tab__name ]">A</label>
-<pre class="[ tab__panel ]"><code>./scripts/block.sh header</code></pre>
+  <input id="A" type="radio" name="tab-name" checked="checked" />
+  <label for="A" class="[ tab__name ]">A</label>
+  <pre class="[ tab__panel ]"><code>echo Hello</code></pre>
 
-<input id="B" type="radio" name="tab-name" />
-<label for="B" class="[ tab__name ]" style="--tab-name-x: 24.23px">B</label>
-<pre class="[ tab__panel ]"><code>pandoc writing.md \
-       --toc \
-       --standalone \
-       --wrap=preserve \
-       --highlight-style=kate \
-       --output=writing.html</code></pre>
+  <input id="B" type="radio" name="tab-name" />
+  <label for="B" class="[ tab__name ]" style="--tab-name-x: 24.23px">B</label>
+  <pre class="[ tab__panel ]"><code>echo World</code></pre>
 </form>

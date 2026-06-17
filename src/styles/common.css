@@ -363,12 +363,19 @@ footer {
     margin-top: calc(var(--spacing) * 2);
 }
 
+.pl-0 {
+    padding-left: 0;
+}
 .pl-2 {
     padding-left: calc(var(--spacing) * 2);
 }
 
 .top-0 {
     top: 0;
+}
+
+.list-style-none {
+    list-style: none;
 }
 
 .line-clamp-3 {
@@ -388,10 +395,6 @@ footer {
     position: absolute;
     white-space: nowrap;
     width: 1px;
-}
-
-.text-center {
-    text-align: center;
 }
 
 /* == BLOCK & EXCEPTION == */
@@ -525,10 +528,4 @@ footer {
 .section-list {
     --grid-column-min-width: calc(var(--spacing) * 70);
     --grid-gap: calc(var(--spacing) * 10)
-}
-
-.list-none {
-    --flow-y-spacing: calc(var(--spacing) * 4);
-    list-style: none;
-    padding-left: 0;
 }
