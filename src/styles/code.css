@@ -2,7 +2,6 @@
     --tab-color: var(--light, #1f1c1b) var(--dark, #cfcfc2);
 
     --tab-panel-font-size: var(--text-sm);
-    --tab-panel-line-height: var(--text-sm--line-height);
     --tab-panel-font-family: var(--font-mono);
     --tab-panel-overflow: auto;
 }

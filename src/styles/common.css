@@ -7,7 +7,6 @@
  * - UTILITY is a CSS class that does one job and does that one job well.
  */
 
-
 :root {
     --ON: initial;
     --OFF: ;
@@ -42,23 +41,14 @@
     --breakpoint-2xl: 96rem;
 
     --text-xxs: 0.5rem;
-    --text-xxs--line-height: calc(0.75 / 0.5);
     --text-xs: 0.75rem;
-    --text-xs--line-height: calc(1 / 0.75);
     --text-sm: 0.875rem;
-    --text-sm--line-height: calc(1.25 / 0.875);
     --text-base: 1rem;
-    --text-base--line-height: calc(1.5 / 1);
     --text-lg: 1.125rem;
-    --text-lg--line-height: calc(1.75 / 1.125);
     --text-xl: 1.25rem;
-    --text-xl--line-height: calc(1.75 / 1.25);
     --text-2xl: 1.5rem;
-    --text-2xl--line-height: calc(2 / 1.5);
     --text-3xl: 1.875rem;
-    --text-3xl--line-height: calc(2.25 / 1.875);
     --text-4xl: 2.25rem;
-    --text-4xl--line-height: calc(2.5 / 2.25);
 
     --font-sans: system-ui, sans-serif;
     --font-serif: "Times New Roman", Times, serif;
@@ -178,7 +168,6 @@ h6 {
 body {
     font-family: var(--font-sans);
     font-size: var(--text-base);
-    line-height: var(--text-base--line-height);
     color: var(--color-fg);
     background-color: var(--color-bg);
     max-width: 48rem;
@@ -213,7 +202,6 @@ main {
 
 h1 {
     font-size: var(--text-4xl);
-    line-height: var(--text-4xl--line-height);
     font-weight: var(--font-weight-extrabold);
     margin-top: calc(var(--spacing) * 6);
     margin-bottom: calc(var(--spacing) * 6);
@@ -221,7 +209,6 @@ h1 {
 
 h2 {
     font-size: var(--text-2xl);
-    line-height: var(--text-2xl--line-height);
     font-weight: var(--font-weight-bold);
     margin-bottom: calc(var(--spacing) * 4);
     margin-top: calc(var(--spacing) * 4);
@@ -230,7 +217,6 @@ h2 {
 
 h3 {
     font-size: var(--text-lg);
-    line-height: var(--text-lg--line-height);
     font-weight: var(--font-weight-semibold);
     margin-bottom: calc(var(--spacing) * 2);
     margin-top: calc(var(--spacing) * 2);
@@ -239,7 +225,6 @@ h3 {
 
 small {
     font-size: var(--text-sm);
-    line-height: var(--text-sm--line-height);
 }
 
 a {
@@ -281,6 +266,11 @@ h1 a, h2 a, h3 a {
     color: var(--color-fg);
     text-decoration: none;
 }
+@media (hover: hover) {
+    h1 a:hover, h2 a:hover, h3 a:hover {
+        text-decoration: none;
+    }
+}
 h1 a::before,
 h2 a::before,
 h3 a::before {
@@ -302,7 +292,6 @@ h3:hover a::before {
 code:not(pre code) {
     font-family: var(--font-mono);
     font-size: var(--text-xs);
-    line-height: var(--text-xs--line-height);
     color: var(--light, #463e00) var(--dark, #f3ea6c);
     background-color: var(--light, #f9ffbf) var(--dark, #423200);
     padding: calc(var(--spacing) * 0.25) calc(var(--spacing) * 0.5);
@@ -315,7 +304,6 @@ b, strong {
 
 footer {
     font-size: var(--text-sm);
-    line-height: var(--text-sm--line-height);
     color: var(--color-mono-08);
 }
 
@@ -432,7 +420,6 @@ footer {
     --tab-background-color: var(--light, var(--color-mono-01)) var(--dark, var(--color-mono-02));
 
     --tab-name-font-size: var(--text-sm);
-    --tab-name-line-height: var(--text-sm--line-height);
     --tab-name-font-family: var(--font-sans);
     --tab-name-block-padding: calc(var(--spacing) * 1.5);
     --tab-name-inline-padding: calc(var(--spacing) * 2);
@@ -441,7 +428,6 @@ footer {
     --tab-name-active-background-color: var(--color-mono-03);
 
     --tab-panel-font-size: var(--text-base);
-    --tab-panel-line-height: var(--text-base--line-height);
     --tab-panel-font-family: var(--font-sans);
     --tab-panel-block-padding: calc(var(--spacing) * 3);
     --tab-panel-inline-padding: calc(var(--spacing) * 3);
@@ -451,7 +437,7 @@ footer {
 
     position: relative;
     margin-top: calc(
-        var(--tab-name-font-size) * var(--tab-name-line-height) +
+        var(--tab-name-font-size) * 1.5 +  /* 1.5 is global line height */
         var(--tab-name-block-padding) * 2 +
         var(--tab-border-width) +
         var(--tab-top-spacing)
@@ -463,7 +449,6 @@ footer {
     transform: translate3d(var(--tab-name-x, 0), -100%, 0);
     display: inline-block;
     font-size: var(--tab-name-font-size);
-    line-height: var(--tab-name-line-height);
     font-family: var(--tab-name-font-family);
     color: var(--tab-name-color);
     background-color: var(--tab-name-background-color);
@@ -482,7 +467,6 @@ footer {
 .tab > .tab__panel {
     overflow: var(--tab-panel-overflow);
     font-size: var(--tab-panel-font-size);
-    line-height: var(--tab-panel-line-height);
     font-family: var(--tab-panel-font-family);
     color: var(--tab-panel-color);
     background-color: var(--tab-panel-background-color);
