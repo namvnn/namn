@@ -14,7 +14,7 @@
     --light: var(--ON);
     --dark: var(--OFF);
 
-    --color-purple: var(--light, #7f00ff) var(--dark, #c182ff);
+    --color-primary: var(--light, #7f00ff) var(--dark, #c182ff);
 
     --color-mono-00: var(--light, #ffffff) var(--dark, #111111);
     --color-mono-01: var(--light, #fafafa) var(--dark, #141414);
@@ -228,20 +228,20 @@ small {
 }
 
 a {
-    color: var(--color-purple);
+    color: var(--color-primary);
     text-decoration: none;
 }
 @media (hover: hover) {
     a:hover {
         text-decoration-line: underline;
-        text-decoration-color: var(--color-purple);
+        text-decoration-color: var(--color-primary);
         text-decoration-style: solid;
         text-decoration-thickness: calc(var(--spacing) * 0.5);
         text-underline-offset: calc(var(--spacing) * 1.25);
     }
 }
 a[href^="http"]::after {
-    --anchor-icon-color: var(--color-purple);
+    --anchor-icon-color: var(--color-primary);
     --anchor-icon-size: 0.75em;
     --anchor-icon-spacing: calc(var(--spacing) * 0.5);
 
