@@ -49,6 +49,8 @@
     --text-2xl: 1.875rem;
     --text-3xl: 2.25rem;
 
+    --text-line-height: 1.5;
+
     --font-sans: system-ui, sans-serif;
     --font-serif: "Times New Roman", Times, serif;
     --font-mono: monospace;
@@ -112,7 +114,7 @@ html {
 
 body {
     /* Add accessible line-height */
-    line-height: 1.5;
+    line-height: var(--text-line-height);
     /* Improve text rendering */
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
@@ -429,7 +431,7 @@ footer {
 
     position: relative;
     margin-top: calc(
-        var(--tab-name-font-size) * 1.5 +  /* 1.5 is global line height */
+        var(--tab-name-font-size) * var(--text-line-height) +
         var(--tab-name-block-padding) * 2 +
         var(--tab-border-width) +
         var(--tab-top-spacing)
