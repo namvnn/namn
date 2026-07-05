@@ -25,7 +25,7 @@ dev:
 
 .PHONY: deploy
 deploy: checkcommit build
-	@pnpx wrangler pages deploy $(DIST_PATH) --project-name 'namnme'
+	@pnpx wrangler pages deploy --project-name 'namnme' $(DIST_PATH)
 
 .PHONY: checkcommit
 checkcommit:
@@ -39,7 +39,7 @@ build: blocks
 	@echo "\n==> Deleting $(DIST_PATH)..."
 	@rm -rf $(DIST_PATH)
 	@echo "\n==> Preparing files..."
-	@rsync -rPavh --delete --exclude $(BLOCKS_DIR) $(SRC_PATH)/ $(DIST_PATH)
+	@rsync -rPavhz --delete --exclude $(BLOCKS_DIR) --exclude '.DS_Store' $(SRC_PATH)/ $(DIST_PATH)
 
 .PHONY: blocks
 blocks:
