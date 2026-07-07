@@ -156,10 +156,6 @@ h6 {
     scrollbar-color: var(--color-mono-03) transparent;
 }
 
-html {
-    scroll-behavior: smooth;
-}
-
 body {
     font-family: var(--font-sans);
     font-size: var(--text-base);
