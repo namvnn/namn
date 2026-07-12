@@ -5,6 +5,11 @@
     margin-bottom: calc(var(--spacing) * 4);
 }
 
+.writing .toc {
+    font-size: var(--text-sm);
+    margin-bottom: 0;
+}
+
 .writing ul ul,
 .writing ol ol,
 .writing ul ol,
