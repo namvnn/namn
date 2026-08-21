@@ -283,8 +283,9 @@ code:not(pre code) {
     font-size: var(--text-sm);
     color: var(--light, #463e00) var(--dark, #f3ea6c);
     background-color: var(--light, #f9ffbf) var(--dark, #423200);
-    padding: calc(var(--spacing) * 0.25) calc(var(--spacing) * 0.5);
-    border-radius: var(--radius-xs);
+    padding: calc(var(--spacing) * 0.25) calc(var(--spacing) * 0.75);
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--light, #ded54c) var(--dark, #736f2f);
 }
 
 b, strong {
