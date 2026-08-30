@@ -558,3 +558,20 @@ footer {
     --grid-column-min-width: calc(var(--spacing) * 70);
     --grid-gap: calc(var(--spacing) * 10)
 }
+
+
+.codeblock {
+    --tab-color: var(--light, #1f1c1b) var(--dark, #cfcfc2);
+
+    --tab-panel-font-size: var(--text-sm);
+    --tab-panel-font-family: var(--font-mono);
+    --tab-panel-overflow: auto;
+}
+* + .codeblock {
+    --tab-top-spacing: calc(var(--spacing) * 4);
+}
+@media print {
+    .codeblock code {
+        white-space: pre-wrap;
+    }
+}

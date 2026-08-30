@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="generator" content="pandoc" />
+  <meta name="generator" content="pandoc 3.10.2" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
   <title>How Did I Build My Website?</title>
   <style>
@@ -41,7 +41,6 @@
       body {
         background-color: transparent;
         color: black;
-        font-size: 12pt;
       }
       p, h2, h3 {
         orphans: 3;
@@ -91,6 +90,7 @@
       color: #606060;
     }
     code {
+      white-space: pre-wrap;
       font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
       font-size: 85%;
       margin: 0;
@@ -154,10 +154,13 @@
     #TOC a:not(:hover) {
       text-decoration: none;
     }
-    code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
-    div.columns{display: flex; gap: min(4vw, 1.5em);}
-    div.column{flex: auto; overflow-x: auto;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     /* The extra [class] is a hack that increases specificity enough to
        override a similar rule in reveal.js */
@@ -169,74 +172,6 @@
       vertical-align: middle;
     }
     .display.math{display: block; text-align: center; margin: 0.5rem auto;}
-    /* CSS for syntax highlighting */
-    html { -webkit-text-size-adjust: 100%; }
-    pre > code.sourceCode { white-space: pre; position: relative; }
-    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-    pre > code.sourceCode > span:empty { height: 1.2em; }
-    .sourceCode { overflow: visible; }
-    code.sourceCode > span { color: inherit; text-decoration: inherit; }
-    div.sourceCode { margin: 1em 0; }
-    pre.sourceCode { margin: 0; }
-    @media screen {
-    div.sourceCode { overflow: auto; }
-    }
-    @media print {
-    pre > code.sourceCode { white-space: pre-wrap; }
-    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-    }
-    pre.numberSource code
-      { counter-reset: source-line 0; }
-    pre.numberSource code > span
-      { position: relative; left: -4em; counter-increment: source-line; }
-    pre.numberSource code > span > a:first-child::before
-      { content: counter(source-line);
-        position: relative; left: -1em; text-align: right; vertical-align: baseline;
-        border: none; display: inline-block;
-        -webkit-touch-callout: none; -webkit-user-select: none;
-        -khtml-user-select: none; -moz-user-select: none;
-        -ms-user-select: none; user-select: none;
-        padding: 0 4px; width: 4em;
-        background-color: #ffffff;
-        color: #a0a0a0;
-      }
-    pre.numberSource { margin-left: 3em; border-left: 1px solid #a0a0a0;  padding-left: 4px; }
-    div.sourceCode
-      { color: #1f1c1b; background-color: #ffffff; }
-    @media screen {
-    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-    }
-    code span { color: #1f1c1b; } /* Normal */
-    code span.al { color: #bf0303; background-color: #f7e6e6; font-weight: bold; } /* Alert */
-    code span.an { color: #ca60ca; } /* Annotation */
-    code span.at { color: #0057ae; } /* Attribute */
-    code span.bn { color: #b08000; } /* BaseN */
-    code span.bu { color: #644a9b; font-weight: bold; } /* BuiltIn */
-    code span.cf { color: #1f1c1b; font-weight: bold; } /* ControlFlow */
-    code span.ch { color: #924c9d; } /* Char */
-    code span.cn { color: #aa5500; } /* Constant */
-    code span.co { color: #898887; } /* Comment */
-    code span.cv { color: #0095ff; } /* CommentVar */
-    code span.do { color: #607880; } /* Documentation */
-    code span.dt { color: #0057ae; } /* DataType */
-    code span.dv { color: #b08000; } /* DecVal */
-    code span.er { color: #bf0303; text-decoration: underline; } /* Error */
-    code span.ex { color: #0095ff; font-weight: bold; } /* Extension */
-    code span.fl { color: #b08000; } /* Float */
-    code span.fu { color: #644a9b; } /* Function */
-    code span.im { color: #ff5500; } /* Import */
-    code span.in { color: #b08000; } /* Information */
-    code span.kw { color: #1f1c1b; font-weight: bold; } /* Keyword */
-    code span.op { color: #1f1c1b; } /* Operator */
-    code span.ot { color: #006e28; } /* Other */
-    code span.pp { color: #006e28; } /* Preprocessor */
-    code span.re { color: #0057ae; background-color: #e0e9f8; } /* RegionMarker */
-    code span.sc { color: #3daee9; } /* SpecialChar */
-    code span.ss { color: #ff5500; } /* SpecialString */
-    code span.st { color: #bf0303; } /* String */
-    code span.va { color: #0057ae; } /* Variable */
-    code span.vs { color: #bf0303; } /* VerbatimString */
-    code span.wa { color: #bf0303; } /* Warning */
   </style>
 </head>
 <body>
@@ -261,14 +196,14 @@
 <li><a href="#interesting-points" id="toc-interesting-points">Interesting points</a></li>
 </ul>
 </nav>
-<p>Published on March 25, 2025. Last updated on June 11, 2026.</p>
+<p>Published on March 25, 2025. Last updated on August 30, 2026.</p>
 <h2 id="motivation">Motivation</h2>
 <p>In the past, I built some portfolios to mainly showcase my small projects
 when I was learning programming and job hunting. These portfolios were unnecessarily
 complex, as they were built with <a href="https://react.dev">React.js</a> or <a href="https://nextjs.org">Next.js</a>.
 After landing my first programming job, I neglected the portfolio, neither
 updating it nor writing any blog posts. At the beginning of 2025, I decided to
-make a “fresh start” by rebuilding my website with a simpler UI and without
+make a "fresh start" by rebuilding my website with a simpler UI and without
 any JavaScript front-end frameworks or libraries.</p>
 <p>As I have grown in my programming career, I have become more interested in
 understanding how technologies work under the hood and sharing my thoughts on
@@ -302,10 +237,10 @@ methodology thanks to Kevin Powell amazing video,
 <a href="https://youtu.be/NanhQvnvbR8">A look at the CUBE CSS methodology in action</a>.</p>
 <p>The reason why I chose CUBE CSS is because its website mentions:</p>
 <ul>
-<li><em>“CUBE CSS is a CSS methodology that's orientated towards simplicity,
-pragmatism and consistency.”</em></li>
-<li><em>“This differs somewhat to other popular methodologies like BEM, which are
-very good in their own right, but also run against the grain of CSS.”</em></li>
+<li><em>"CUBE CSS is a CSS methodology that's orientated towards simplicity,
+pragmatism and consistency."</em></li>
+<li><em>"This differs somewhat to other popular methodologies like BEM, which are
+very good in their own right, but also run against the grain of CSS."</em></li>
 </ul>
 <p>Those made me want to explore and experiment it.</p>
 <p>It turns out that using CUBE CSS has been a fun experience, even though I
@@ -318,31 +253,27 @@ I find it fun to work with.</p>
 His CSS reset is solid, simple, and sufficient in most cases. If you get a
 chance, I highly recommend checking it out. He explains it in great detail.</p>
 <h3 id="code-syntax-highlighting">Code syntax highlighting</h3>
-<p>I copied Pandoc's <a href="https://pandoc.org/demos.html#:~:text=Syntax%20highlighting%20of%20delimited%20code%20blocks%3A">code syntax highlighting
-style</a>,
-then adjusted it to align with my preferences. My tweaked version of code syntax
-highlighting in CSS is available at
-<a href="https://github.com/namvnn/namn/blob/main/src/styles/code.css">styles/code.css</a>.
-It supports both light and dark mode.</p>
+<p>I use a single color for code syntax highlighting. I hope that my choice is not
+too disappointing for you.</p>
 <p>For example:</p>
 <p>main.c</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;stdio.h&gt;</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> main<span class="op">(</span><span class="dt">void</span><span class="op">)</span> <span class="op">{</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  printf<span class="op">(</span><span class="st">&quot;Hello world!&quot;</span><span class="op">);</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<pre><code>#include &lt;stdio.h&gt;
+
+int main(void) {
+  printf(&quot;Hello world!&quot;);
+}</code></pre>
 <p>main.js</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> express <span class="op">=</span> <span class="pp">require</span>(<span class="st">&#39;express&#39;</span>)</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> app <span class="op">=</span> <span class="fu">express</span>()</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> port <span class="op">=</span> <span class="dv">3000</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>app<span class="op">.</span><span class="fu">get</span>(<span class="st">&#39;/&#39;</span><span class="op">,</span> (req<span class="op">,</span> res) <span class="kw">=&gt;</span> {</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  res<span class="op">.</span><span class="fu">send</span>(<span class="st">&#39;Hello World!&#39;</span>)</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>})</span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>app<span class="op">.</span><span class="fu">listen</span>(port<span class="op">,</span> () <span class="kw">=&gt;</span> {</span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>  <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="vs">`Example app listening on port </span><span class="sc">${</span>port<span class="sc">}</span><span class="vs">`</span>)</span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>})</span></code></pre></div>
+<pre><code>const express = require(&#39;express&#39;)
+const app = express()
+const port = 3000
+
+app.get(&#39;/&#39;, (req, res) =&gt; {
+  res.send(&#39;Hello World!&#39;)
+})
+
+app.listen(port, () =&gt; {
+  console.log(`Example app listening on port ${port}`)
+})</code></pre>
 <h2 id="content">Content</h2>
 <h3 id="how-is-page-content-managed">How is page content managed?</h3>
 <p>I have been using HTML directly to create and update pages. However, there is
@@ -357,15 +288,15 @@ to solve this issue. A block is similar to a component in popular front-end
 frameworks/libraries. It is a reusable group of HTML elements.</p>
 <p><code>Block</code> declaration syntax:</p>
 <p>block</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- block-start: block-name --&gt;</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- block-end: block-name --&gt;</span></span></code></pre></div>
+<pre><code>&lt;!-- block-start: block-name --&gt;
+&lt;!-- block-end: block-name --&gt;</code></pre>
 <p>Let's see <code>Block</code> in action with the example below.</p>
 <ol type="1">
 <li>Create files as the following tree.</li>
 </ol>
 <p>files</p>
 <pre><code>scripts/
-└── block.sh
+└── block
 src/
 ├── blocks/
 │   └── header.html
@@ -378,83 +309,83 @@ be formatted properly when the <code>header</code> block is placed in HTML page 
 indentation does not matter in my case as I do not preserve it.</li>
 </ol>
 <p>src/blocks/header.html</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">header</span><span class="dt">&gt;</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&lt;</span><span class="kw">nav</span><span class="dt">&gt;</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&lt;</span><span class="kw">a</span><span class="ot"> href</span><span class="op">=</span><span class="st">&quot;/home.html&quot;</span><span class="dt">&gt;</span>Home<span class="dt">&lt;/</span><span class="kw">a</span><span class="dt">&gt;</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&lt;</span><span class="kw">a</span><span class="ot"> href</span><span class="op">=</span><span class="st">&quot;/projects.html&quot;</span><span class="dt">&gt;</span>Projects<span class="dt">&lt;/</span><span class="kw">a</span><span class="dt">&gt;</span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&lt;/</span><span class="kw">nav</span><span class="dt">&gt;</span></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;/</span><span class="kw">header</span><span class="dt">&gt;</span></span></code></pre></div>
+<pre><code>    &lt;header&gt;
+      &lt;nav&gt;
+        &lt;a href=&quot;/home.html&quot;&gt;Home&lt;/a&gt;
+        &lt;a href=&quot;/projects.html&quot;&gt;Projects&lt;/a&gt;
+      &lt;/nav&gt;
+    &lt;/header&gt;</code></pre>
 <ol start="3" type="1">
 <li>Define the Home page with <code>header</code>'s start and end block tag.</li>
 </ol>
 <p>src/home.html</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;!DOCTYPE</span> html<span class="dt">&gt;</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">html</span><span class="ot"> lang</span><span class="op">=</span><span class="st">&quot;en&quot;</span><span class="dt">&gt;</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&lt;</span><span class="kw">head</span><span class="dt">&gt;</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&lt;</span><span class="kw">title</span><span class="dt">&gt;</span>Home<span class="dt">&lt;/</span><span class="kw">title</span><span class="dt">&gt;</span></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&lt;/</span><span class="kw">head</span><span class="dt">&gt;</span></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&lt;</span><span class="kw">body</span><span class="dt">&gt;</span></span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>    <span class="co">&lt;!-- block-start: header --&gt;</span></span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>    <span class="co">&lt;!-- block-end: header --&gt;</span></span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&lt;/</span><span class="kw">body</span><span class="dt">&gt;</span></span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">html</span><span class="dt">&gt;</span></span></code></pre></div>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+  &lt;head&gt;
+  &lt;title&gt;Home&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;!-- block-start: header --&gt;
+    &lt;!-- block-end: header --&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
 <ol start="4" type="1">
 <li>Define the Projects page with <code>header</code>'s start and end block tag.</li>
 </ol>
 <p>src/projects.html</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;!DOCTYPE</span> html<span class="dt">&gt;</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">html</span><span class="ot"> lang</span><span class="op">=</span><span class="st">&quot;en&quot;</span><span class="dt">&gt;</span></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&lt;</span><span class="kw">head</span><span class="dt">&gt;</span></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&lt;</span><span class="kw">title</span><span class="dt">&gt;</span>Projects<span class="dt">&lt;/</span><span class="kw">title</span><span class="dt">&gt;</span></span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&lt;/</span><span class="kw">head</span><span class="dt">&gt;</span></span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&lt;</span><span class="kw">body</span><span class="dt">&gt;</span></span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>    <span class="co">&lt;!-- block-start: header --&gt;</span></span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>    <span class="co">&lt;!-- block-end: header --&gt;</span></span>
-<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&lt;/</span><span class="kw">body</span><span class="dt">&gt;</span></span>
-<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">html</span><span class="dt">&gt;</span></span></code></pre></div>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+  &lt;head&gt;
+  &lt;title&gt;Projects&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;!-- block-start: header --&gt;
+    &lt;!-- block-end: header --&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
 <ol start="5" type="1">
-<li>Run <code>scripts/block.sh</code> with the block name (i.e. <code>header</code>). The script can
-be found in <a href="https://github.com/namvnn/namn/blob/main/scripts/block.sh">scripts/block.sh</a>.</li>
+<li>Run <code>scripts/block</code> with the block name (i.e. <code>header</code>). The script can
+be found in <a href="https://github.com/namvnn/namn/blob/main/scripts/block">scripts/block</a>.</li>
 </ol>
 <p>shell</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./scripts/block.sh</span> header</span></code></pre></div>
+<pre><code>./scripts/block header</code></pre>
 <ol start="6" type="1">
 <li>As a result, the Home page and the Projects page are updated as follows.</li>
 </ol>
 <p>src/home.html</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;!DOCTYPE</span> html<span class="dt">&gt;</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">html</span><span class="ot"> lang</span><span class="op">=</span><span class="st">&quot;en&quot;</span><span class="dt">&gt;</span></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&lt;</span><span class="kw">head</span><span class="dt">&gt;</span></span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&lt;</span><span class="kw">title</span><span class="dt">&gt;</span>Home<span class="dt">&lt;/</span><span class="kw">title</span><span class="dt">&gt;</span></span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&lt;/</span><span class="kw">head</span><span class="dt">&gt;</span></span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&lt;</span><span class="kw">body</span><span class="dt">&gt;</span></span>
-<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>    <span class="co">&lt;!-- block-start: header --&gt;</span></span>
-<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">header</span><span class="dt">&gt;</span></span>
-<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&lt;</span><span class="kw">nav</span><span class="dt">&gt;</span></span>
-<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&lt;</span><span class="kw">a</span><span class="ot"> href</span><span class="op">=</span><span class="st">&quot;/home.html&quot;</span><span class="dt">&gt;</span>Home<span class="dt">&lt;/</span><span class="kw">a</span><span class="dt">&gt;</span></span>
-<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&lt;</span><span class="kw">a</span><span class="ot"> href</span><span class="op">=</span><span class="st">&quot;/projects.html&quot;</span><span class="dt">&gt;</span>Projects<span class="dt">&lt;/</span><span class="kw">a</span><span class="dt">&gt;</span></span>
-<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&lt;/</span><span class="kw">nav</span><span class="dt">&gt;</span></span>
-<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;/</span><span class="kw">header</span><span class="dt">&gt;</span></span>
-<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>    <span class="co">&lt;!-- block-end: header --&gt;</span></span>
-<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&lt;/</span><span class="kw">body</span><span class="dt">&gt;</span></span>
-<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">html</span><span class="dt">&gt;</span></span></code></pre></div>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+  &lt;head&gt;
+  &lt;title&gt;Home&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;!-- block-start: header --&gt;
+    &lt;header&gt;
+      &lt;nav&gt;
+        &lt;a href=&quot;/home.html&quot;&gt;Home&lt;/a&gt;
+        &lt;a href=&quot;/projects.html&quot;&gt;Projects&lt;/a&gt;
+      &lt;/nav&gt;
+    &lt;/header&gt;
+    &lt;!-- block-end: header --&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
 <p>src/projects.html</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;!DOCTYPE</span> html<span class="dt">&gt;</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">html</span><span class="ot"> lang</span><span class="op">=</span><span class="st">&quot;en&quot;</span><span class="dt">&gt;</span></span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&lt;</span><span class="kw">head</span><span class="dt">&gt;</span></span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&lt;</span><span class="kw">title</span><span class="dt">&gt;</span>Projects<span class="dt">&lt;/</span><span class="kw">title</span><span class="dt">&gt;</span></span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&lt;/</span><span class="kw">head</span><span class="dt">&gt;</span></span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&lt;</span><span class="kw">body</span><span class="dt">&gt;</span></span>
-<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>    <span class="co">&lt;!-- block-start: header --&gt;</span></span>
-<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">header</span><span class="dt">&gt;</span></span>
-<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&lt;</span><span class="kw">nav</span><span class="dt">&gt;</span></span>
-<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&lt;</span><span class="kw">a</span><span class="ot"> href</span><span class="op">=</span><span class="st">&quot;/home.html&quot;</span><span class="dt">&gt;</span>Home<span class="dt">&lt;/</span><span class="kw">a</span><span class="dt">&gt;</span></span>
-<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&lt;</span><span class="kw">a</span><span class="ot"> href</span><span class="op">=</span><span class="st">&quot;/projects.html&quot;</span><span class="dt">&gt;</span>Projects<span class="dt">&lt;/</span><span class="kw">a</span><span class="dt">&gt;</span></span>
-<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&lt;/</span><span class="kw">nav</span><span class="dt">&gt;</span></span>
-<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;/</span><span class="kw">header</span><span class="dt">&gt;</span></span>
-<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a>    <span class="co">&lt;!-- block-end: header --&gt;</span></span>
-<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&lt;/</span><span class="kw">body</span><span class="dt">&gt;</span></span>
-<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">html</span><span class="dt">&gt;</span></span></code></pre></div>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+  &lt;head&gt;
+  &lt;title&gt;Projects&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;!-- block-start: header --&gt;
+    &lt;header&gt;
+      &lt;nav&gt;
+        &lt;a href=&quot;/home.html&quot;&gt;Home&lt;/a&gt;
+        &lt;a href=&quot;/projects.html&quot;&gt;Projects&lt;/a&gt;
+      &lt;/nav&gt;
+    &lt;/header&gt;
+    &lt;!-- block-end: header --&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
 <ol start="7" type="1">
 <li>Whenever <code>src/blocks/header.html</code> is updated, simply run the script in the
 step 5 to update the <code>header</code> block across all pages.</li>
@@ -468,12 +399,12 @@ step 5 to update the <code>header</code> block across all pages.</li>
 <code>writing.md</code> to <code>writing.html</code>.</li>
 </ol>
 <p>shell</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pandoc</span> writing.md <span class="dt">\</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>       <span class="at">--toc</span> <span class="dt">\</span></span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>       <span class="at">--standalone</span> <span class="dt">\</span></span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>       <span class="at">--wrap</span><span class="op">=</span>preserve <span class="dt">\</span></span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">--highlight-style</span><span class="op">=</span>kate <span class="dt">\</span></span>
-<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">--output</span><span class="op">=</span>writing.html</span></code></pre></div>
+<pre><code>pandoc writing.md \
+       --toc \
+       --standalone \
+       --wrap=preserve \
+       --highlight-style=kate \
+       --output=writing.html</code></pre>
 <ol start="4" type="1">
 <li>Copy content line by line from <code>writing.html</code> to the actual HTML page,
 making adjustments to align with my website's styling.</li>
@@ -488,7 +419,7 @@ non-interactive. It can perform basic text editing operations of an interactive
 text editor.</li>
 <li>The more I work with Bash, the more I realize that it is extremely powerful.</li>
 <li>Pandoc is extremely powerful. I highly recommend checking out <a href="https://pandoc.org">Pandoc website</a>
-to behold its “God ability in file format conversion”. By the way, it is
+to behold its "God ability in file format conversion". By the way, it is
 written in <a href="https://www.haskell.org">Haskell</a>.</li>
 <li>Living without JavaScript is happy.</li>
 <li>Writing pure CSS is fun.</li>

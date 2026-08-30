@@ -46,30 +46,28 @@ blocks:
 	@find $(SRC_PATH)/$(BLOCKS_DIR) -type file \
 		-exec echo ";" \
 		-exec echo "==> Updating {} block in all pages" ";" \
-		-exec ./scripts/block.sh "{}" ";"
+		-exec ./scripts/block "{}" ";"
 
 .PHONY: block
 block:
-	@./scripts/block.sh $(BLOCK)
+	@./scripts/block $(BLOCK)
 
 .PHONY: gen
 gen:
-	# kate for light, breezedark for dark
 	@echo "Generating $(DRAFTS_PATH)/$(DRAFT).html..."
 	@pandoc $(DRAFTS_PATH)/$(DRAFT).md \
 		--toc \
 		--standalone \
 		--wrap=preserve \
-		--syntax-highlighting=kate \
 		--output=$(DRAFTS_PATH)/$(DRAFT).html
 	@echo "Generated $(DRAFTS_PATH)/$(DRAFT).html!"
 
 .PHONY: bookmarks
 bm:
 	@echo "Generating bookmarks..."
-	@./scripts/bookmarks.sh
-	@./scripts/block.sh "back-to-top" "$(SRC_PATH)/$(BLOCKS_DIR)/bookmarks.html"
-	@./scripts/block.sh "bookmarks"
+	@./scripts/bookmarks
+	@./scripts/block "back-to-top" "$(SRC_PATH)/$(BLOCKS_DIR)/bookmarks.html"
+	@./scripts/block "bookmarks"
 	@echo "Generated bookmarks..."
 
 .PHONY: clean

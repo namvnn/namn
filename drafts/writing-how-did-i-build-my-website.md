@@ -3,7 +3,7 @@ title: How Did I Build My Website?
 lang: en
 ...
 
-Published on March 25, 2025. Last updated on June 11, 2026.
+Published on March 25, 2025. Last updated on August 30, 2026.
 
 ## Motivation
 
@@ -76,17 +76,13 @@ chance, I highly recommend checking it out. He explains it in great detail.
 
 ### Code syntax highlighting
 
-I copied Pandoc's [code syntax highlighting
-style](https://pandoc.org/demos.html#:~:text=Syntax%20highlighting%20of%20delimited%20code%20blocks%3A),
-then adjusted it to align with my preferences. My tweaked version of code syntax
-highlighting in CSS is available at
-[styles/code.css](https://github.com/namvnn/namn/blob/main/src/styles/code.css).
-It supports both light and dark mode.
+I use a single color for code syntax highlighting. I hope that my choice is not
+too disappointing for you.
 
 For example:
 
 main.c
-```c
+```
 #include <stdio.h>
 
 int main(void) {
@@ -95,7 +91,7 @@ int main(void) {
 ```
 
 main.js
-```js
+```
 const express = require('express')
 const app = express()
 const port = 3000
@@ -128,7 +124,7 @@ frameworks/libraries. It is a reusable group of HTML elements.
 `Block` declaration syntax:
 
 block
-```html
+```
 <!-- block-start: block-name -->
 <!-- block-end: block-name -->
 ```
@@ -140,7 +136,7 @@ Let's see `Block` in action with the example below.
 files
 ```
 scripts/
-└── block.sh
+└── block
 src/
 ├── blocks/
 │   └── header.html
@@ -154,7 +150,7 @@ be formatted properly when the `header` block is placed in HTML page files,
 indentation does not matter in my case as I do not preserve it.
 
 src/blocks/header.html
-```html
+```
     <header>
       <nav>
         <a href="/home.html">Home</a>
@@ -166,7 +162,7 @@ src/blocks/header.html
 3. Define the Home page with `header`'s start and end block tag.
 
 src/home.html
-```html
+```
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -182,7 +178,7 @@ src/home.html
 4. Define the Projects page with `header`'s start and end block tag.
 
 src/projects.html
-```html
+```
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -195,18 +191,18 @@ src/projects.html
 </html>
 ```
 
-5. Run `scripts/block.sh` with the block name (i.e. `header`). The script can
-be found in [scripts/block.sh](https://github.com/namvnn/namn/blob/main/scripts/block.sh).
+5. Run `scripts/block` with the block name (i.e. `header`). The script can
+be found in [scripts/block](https://github.com/namvnn/namn/blob/main/scripts/block).
 
 shell
-```sh
-./scripts/block.sh header
+```
+./scripts/block header
 ```
 
 6. As a result, the Home page and the Projects page are updated as follows.
 
 src/home.html
-```html
+```
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -226,7 +222,7 @@ src/home.html
 ```
 
 src/projects.html
-```html
+```
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -258,7 +254,7 @@ A writing is created through the following steps:
 `writing.md` to `writing.html`.
 
 shell
-```sh
+```
 pandoc writing.md \
        --toc \
        --standalone \
