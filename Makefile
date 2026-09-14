@@ -21,11 +21,11 @@ DEV_PORT := 8080
 
 .PHONY: dev
 dev:
-	@cd $(SRC_PATH) && pnpx serve && echo "Command not found: pnpx"
+	@serve $(SRC_PATH)
 
 .PHONY: deploy
 deploy: checkcommit build
-	@pnpx wrangler pages deploy --project-name 'namnme' $(DIST_PATH)
+	@wrangler pages deploy --project-name 'namnme' $(DIST_PATH)
 
 .PHONY: checkcommit
 checkcommit:

@@ -14,6 +14,9 @@ deploying the website, and cleaning up.
 - [GNU sed](https://www.gnu.org/software/sed) updates repeated HTML blocks.
 - [Pandoc](https://pandoc.org) converts Markdown to HTML.
 - [Cloudflare Pages](https://pages.cloudflare.com) hosts the website.
+- [Serve](https://github.com/vercel/serve) run local dev server.
+- [Wrangler](https://developers.cloudflare.com/workers/wrangler) deploys the
+  website.
 
 ## License
 
