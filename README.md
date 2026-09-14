@@ -21,4 +21,4 @@ The major technologies I have used to build [my website](https://namn.me):
 
 ## License
 
-[MIT](./LICENSE) License
+[MIT](./LICENSE)
