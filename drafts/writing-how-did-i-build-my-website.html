@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="generator" content="pandoc 3.10.2" />
+  <meta name="generator" content="pandoc 3.11" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
   <title>How Did I Build My Website?</title>
   <style>
@@ -171,7 +171,6 @@
       margin: 0 0.8em 0.2em -1.6em;
       vertical-align: middle;
     }
-    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
   </style>
 </head>
 <body>
@@ -196,7 +195,7 @@
 <li><a href="#interesting-points" id="toc-interesting-points">Interesting points</a></li>
 </ul>
 </nav>
-<p>Published on March 25, 2025. Last updated on August 30, 2026.</p>
+<p>Published on March 25, 2025. Last updated on September 14, 2026.</p>
 <h2 id="motivation">Motivation</h2>
 <p>In the past, I built some portfolios to mainly showcase my small projects
 when I was learning programming and job hunting. These portfolios were unnecessarily
@@ -213,18 +212,22 @@ experiment and writing.</p>
 <h2 id="tech-stack">Tech stack</h2>
 <p>Here are the major technologies I have used to build my website:</p>
 <ul>
-<li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML">HTML</a> defines the website's
-structure and content.</li>
-<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS</a> specifies the website's
-styling.</li>
-<li><a href="https://www.gnu.org/software/bash">GNU Bash</a> defines scripts for building
-the website, deploying the website and updating repeated HTML blocks across pages.</li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML">HTML</a> defines the
+website's structure and content.</li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS</a> specifies the
+website's styling.</li>
+<li><a href="https://www.gnu.org/software/bash">GNU Bash</a> defines scripts for building the
+website, deploying the website and updating repeated HTML blocks across pages.</li>
 <li><a href="https://www.gnu.org/software/make">GNU Make</a> defines custom commands and
-automates repeated tasks such as running a development server, building the website,
-deploying the website, and cleaning up.</li>
+automates repeated tasks such as running a development server, building the
+website, deploying the website, and cleaning up.</li>
 <li><a href="https://www.gnu.org/software/sed">GNU sed</a> updates repeated HTML blocks.</li>
 <li><a href="https://pandoc.org">Pandoc</a> converts Markdown to HTML.</li>
-<li><a href="https://pages.github.com">GitHub Pages</a> hosts the website.</li>
+<li><a href="https://www.cloudflare.com/products/pages">Cloudflare Pages</a> hosts the
+website.</li>
+<li><a href="https://github.com/vercel/serve">Serve</a> run local dev server.</li>
+<li><a href="https://developers.cloudflare.com/workers/wrangler">Wrangler</a> deploys the
+website.</li>
 </ul>
 <h2 id="styling">Styling</h2>
 <p>I have been using only pure CSS to style my website.</p>
