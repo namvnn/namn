@@ -72,4 +72,4 @@ bm:
 
 .PHONY: clean
 clean:
-	rm -rf $(DIST_PATH)
+	rm -rf $(DIST_PATH) .wrangler
