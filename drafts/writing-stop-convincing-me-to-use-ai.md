@@ -1,5 +1,5 @@
 ---
-title: Stop Convincing Me To Use AI
+title: Stop convincing me to use AI
 lang: en
 ...
 

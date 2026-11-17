@@ -1,5 +1,5 @@
 ---
-title: Feel Lonely In An "AI Office"
+title: Feel lonely in an "AI Office"
 lang: en
 ...
 
